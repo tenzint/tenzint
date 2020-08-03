@@ -15,3 +15,6 @@ Steps taken/problems faced while making this website.
 * Regarding that error during firebase init, turns out I need to reauthenticate myself, so I did `firebase login --reauth`, which redirected me to login to my gmail on browser and solved this issue.
 * During init, I'm using hosting and real-time database. I'm planning to get feedbacks from people and store it in db. 
 * Vue cli doc tells me to name the firebase public folder as 'dist', as public is already used by vue/vuetify. I remember once keeping it as public and I had to reinstall everything in the past.
+
+* deleted firebase init results in root directory, and redid firebase init in client directory. During `npm run build`, the old error regarding vue.ps1 resurfaced. I ran `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser` in root directory via powershell to fix this. Now dist is ready to be deployed!
+* 
