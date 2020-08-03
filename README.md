@@ -2,6 +2,7 @@
 
 This project is the personal website of Tenzin Thabkhae.
 
+tenzint.wep.app
 
 
 Steps taken/problems faced while making this website.
