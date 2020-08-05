@@ -17,4 +17,5 @@ Steps taken/problems faced while making this website.
 * Vue cli doc tells me to name the firebase public folder as 'dist', as public is already used by vue/vuetify. I remember once keeping it as public and I had to reinstall everything in the past.
 
 * deleted firebase init results in root directory, and redid firebase init in client directory. During `npm run build`, the old error regarding vue.ps1 resurfaced. I ran `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser` in root directory via powershell to fix this. Now dist is ready to be deployed!
-* 
+
+* when changing color of `a` links, it's important to also change color of `a:visited`, especially if the background color of link is blue (default color)
