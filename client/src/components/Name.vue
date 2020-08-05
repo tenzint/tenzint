@@ -33,8 +33,8 @@ export default {
 </script>
 
 <style scoped>
-  a {
-    color: white;
+  a, a:link, a:visited {
+    color: #ffffff;
     text-decoration: none;
   }
   a:hover {
