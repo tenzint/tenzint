@@ -11,7 +11,6 @@
         class="text-center"
       >
         <h1 class="text-h4 text-md-h3
-          font-weight-bold
           indigo--text
           text--darken-4
         ">Skills At a Glance</h1>

@@ -17,9 +17,13 @@
           <span class="font-weight-bold">contact: </span>
           <a href="mailto: tenzin.thabkhae@mail.utoronto.ca">tenzin.thabkhae@mail.utoronto.ca</a>
           <span class="mx-4">|</span> <span class="font-weight-bold">github: </span>
-          <a href="https://github.com/tenzint">github.com/tenzint</a>
+          <a href="https://github.com/tenzint"
+            target="_blank"
+          >github.com/tenzint</a>
           <span class="mx-4">|</span> <span class="font-weight-bold">linkedin: </span>
-          <a href="https://www.linkedin.com/in/tenzin-thabkhae-54a37069/">www.linkedin.com/in/tenzin-thabkhae-54a37069/</a>
+          <a href="https://www.linkedin.com/in/tenzin-thabkhae-54a37069/"
+            target="_blank"
+          >www.linkedin.com/in/tenzin-thabkhae-54a37069/</a>
         </h4>
       </v-col>
     </v-row>
