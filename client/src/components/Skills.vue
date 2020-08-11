@@ -13,7 +13,9 @@
         <h1 class="text-h4 text-md-h3
           indigo--text
           text--darken-4
-        ">Skills At a Glance</h1>
+          "
+          id="nav-skills"
+        >Skills At a Glance</h1>
       </v-col>
     </v-row>
     <v-row
@@ -67,6 +69,7 @@
           <li>ytdl-core, youtube-api</li>
           <li>Discord.js</li>
           <li class="text-decoration-underline">Familiar:</li>
+          <li>node-schedule, chokidar
           <li>tmi.js (twitch messaging interface),
             (non-NodeJS) twitch API (GET challenge + POST subscribe)</li>
         </ul>

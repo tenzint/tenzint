@@ -3,14 +3,20 @@
     <Name></Name>
     <Skills></Skills>
     <Volunteer></Volunteer>
+    <SchoolExp></SchoolExp>
+    <PersonalProjects></PersonalProjects>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Name from '@/components/Name.vue';
-import Skills from '@/components/Skills.vue';
-import Volunteer from '@/components/Volunteer.vue';
+// const Foo = () => import('./Foo.vue')
+// lazy loading - async component loading
+const Name = () => import('@/components/Name.vue');
+const Skills = () => import('@/components/Skills.vue');
+const Volunteer = () => import('@/components/Volunteer.vue');
+const SchoolExp = () => import('@/components/SchoolExp.vue');
+const PersonalProjects = () => import('@/components/PersonalProjects.vue');
 
 export default {
   name: 'Home',
@@ -18,6 +24,8 @@ export default {
     Name,
     Skills,
     Volunteer,
+    SchoolExp,
+    PersonalProjects,
   },
 };
 </script>

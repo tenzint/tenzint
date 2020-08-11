@@ -13,7 +13,9 @@
         <h1 class="text-h4 text-md-h3
           indigo--text
           text--darken-4
-        ">Volunteer Experience</h1>
+          "
+          id="nav-volunteer"
+        >Volunteer Experience</h1>
       </v-col>
     </v-row>
     <v-row
@@ -40,7 +42,7 @@
         >
           <li><span class="text-decoration-underline">Utilized:</span>
             Vue.js, Adonis.js, html5, css3,
-          Selenium, git, MySQL, MongoDB, moment.js, </li>
+          Selenium, git, MySQL, MongoDB, moment.js, Chokidar, node-schedule</li>
         </ul>
       </v-col>
     </v-row>

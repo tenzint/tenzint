@@ -9,7 +9,7 @@
       no-gutters
     >
       <v-col class="text-center" cols="12">
-        <h1 class="text-md-h1 text-h2 font-weight-bold">Tenzin Thabkhae</h1>
+        <h1 id="nav-profile" class="text-md-h1 text-h2 font-weight-bold">Tenzin Thabkhae</h1>
         <h6 class="text-subtitle-2 text-md-body-1 display-1 mt-8">
           University of Toronto, Software Engineering
         </h6>
