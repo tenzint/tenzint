@@ -17,11 +17,61 @@
       v-model="drawer"
       color="primary lighten-1"
     >
-      <v-list dense dark>
+      <v-list ripple>
+        <v-list-item
+          ripple
+        >
+          <v-list-item-content>
+            <v-list-item-title
+              class=
+              "
+                pt-4
+                pb-0
+                mb-0
+                white--text
+                text-h4
+                text-center
+                font-weight-bold
+              "
+            >
+              TENZIN
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          ripple
+        >
+          <v-list-item-content>
+            <v-list-item-title
+              class=
+              "
+                mt-0
+                pt-0
+                white--text
+                text-h4
+                text-center
+                font-weight-bold
+              "
+            >
+              THABKHAE
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+      <v-divider>
+      </v-divider>
+      <v-list
+        dense
+        dark
+        rounded
+      >
         <v-list-item
           link
           to="/"
         >
+          <v-list-item-action>
+            <v-icon>mdi-account-circle</v-icon>
+          </v-list-item-action>
           <v-list-item-content>
             Profile
           </v-list-item-content>
@@ -30,30 +80,31 @@
           link
           to="#nav-skills"
         >
+          <v-list-item-action>
+            <v-icon>mdi-file-cog</v-icon>
+          </v-list-item-action>
           <v-list-item-content>
             Skills
           </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
-          to="#nav-volunteer"
+          to="#nav-experience"
         >
+          <v-list-item-action>
+            <v-icon>mdi-school-outline</v-icon>
+          </v-list-item-action>
           <v-list-item-content>
-            Volunteer Experience
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item
-          link
-          to="#nav-school"
-        >
-          <v-list-item-content>
-            School Experience
+            Relevant Experience
           </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
           to="#nav-projects"
         >
+          <v-list-item-action>
+            <v-icon>mdi-wrench</v-icon>
+          </v-list-item-action>
           <v-list-item-content>
             Personal Projects
           </v-list-item-content>
@@ -76,7 +127,7 @@ export default {
   },
 
   data: () => ({
-    drawer: null,
+    drawer: false,
   }),
 };
 </script>

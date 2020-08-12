@@ -2,8 +2,7 @@
   <div class="home">
     <Name></Name>
     <Skills></Skills>
-    <Volunteer></Volunteer>
-    <SchoolExp></SchoolExp>
+    <Experience></Experience>
     <PersonalProjects></PersonalProjects>
   </div>
 </template>
@@ -14,8 +13,7 @@
 // lazy loading - async component loading
 const Name = () => import('@/components/Name.vue');
 const Skills = () => import('@/components/Skills.vue');
-const Volunteer = () => import('@/components/Volunteer.vue');
-const SchoolExp = () => import('@/components/SchoolExp.vue');
+const Experience = () => import('@/components/Experience.vue');
 const PersonalProjects = () => import('@/components/PersonalProjects.vue');
 
 export default {
@@ -23,8 +21,7 @@ export default {
   components: {
     Name,
     Skills,
-    Volunteer,
-    SchoolExp,
+    Experience,
     PersonalProjects,
   },
 };
