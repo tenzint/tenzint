@@ -7,15 +7,64 @@
       hide-on-scroll
     >
       <v-spacer></v-spacer>
-      <v-app-bar-nav-icon
-        @click.stop="drawer = !drawer"
+      <v-snackbar
+        :value="true"
+        :timeout="6000"
+        dark
+        top
+        right
+        color="green"
+        elevation="20"
+        shaped
+        transition="fab-transition"
+        width=10
       >
-      </v-app-bar-nav-icon>
+        <template v-slot:action="{ attrs }">
+        <v-chip
+          class="font-weight-black"
+          color="green"
+          text-color="white"
+          v-bind="attrs"
+        >
+          Click menu bar
+          <v-avatar
+            color="white"
+            class="red--text
+              text-h4
+            "
+            size="96"
+            right
+          >
+            ⇑
+          </v-avatar>
+        </v-chip>
+      </template>
+      </v-snackbar>
+      <v-tooltip
+        left
+        transition="slide-x-reverse-transition"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-app-bar-nav-icon
+            v-bind="attrs"
+            v-on="on"
+            class="outside-click-exclude"
+            @click.stop="drawer = !drawer"
+          >
+          </v-app-bar-nav-icon>
+        </template>
+        <span>Toggle navigation drawer</span>
+      </v-tooltip>
     </v-app-bar>
     <v-navigation-drawer
       app
       v-model="drawer"
       color="primary lighten-1"
+      v-click-outside="{
+        handler: onClickOutsideStandard(e),
+        exclude: ['outside-click-exclude'],
+        closeConditional,
+      }"
     >
       <v-list ripple>
         <v-list-item
@@ -129,5 +178,13 @@ export default {
   data: () => ({
     drawer: false,
   }),
+
+  methods: {
+    onClickOutsideStandard() {
+    },
+    closeConditional() {
+      return this.drawer;
+    },
+  },
 };
 </script>

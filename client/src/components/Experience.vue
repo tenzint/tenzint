@@ -81,6 +81,9 @@
           <li>Spearheaded firebase by creating a firebase project, setting it up,
           sharing ownership with my team and solving team’s
           problems regarding any firebase code</li>
+          <li>Researched and documented the initial project proposal, Gantt charts,
+          progress reports,
+          UML design diagram, my individual presentation speech and the final report</li>
           <li><span class="text-decoration-underline">Utilized:</span>
             Iterative development, Vue.js, Firebase, PDF.js</li>
         </ul>

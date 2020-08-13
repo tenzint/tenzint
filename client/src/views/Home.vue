@@ -4,6 +4,7 @@
     <Skills></Skills>
     <Experience></Experience>
     <PersonalProjects></PersonalProjects>
+    <Hobby></Hobby>
   </div>
 </template>
 
@@ -15,6 +16,7 @@ const Name = () => import('@/components/Name.vue');
 const Skills = () => import('@/components/Skills.vue');
 const Experience = () => import('@/components/Experience.vue');
 const PersonalProjects = () => import('@/components/PersonalProjects.vue');
+const Hobby = () => import('@/components/Hobby.vue');
 
 export default {
   name: 'Home',
@@ -23,6 +25,7 @@ export default {
     Skills,
     Experience,
     PersonalProjects,
+    Hobby,
   },
 };
 </script>
