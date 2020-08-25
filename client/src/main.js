@@ -1,6 +1,7 @@
 // @/main.js
 import Vue from 'vue';
 import WebFontLoader from 'webfontloader';
+import * as firebase from 'firebase/app';
 import App from './App.vue';
 import router from './router';
 import store from './store';

@@ -38,7 +38,7 @@
         <transition
           name="fade"
           @after-enter="showName = true"
-          :duration="{ enter: 1000 }"
+          :duration="{ enter: 1500 }"
         >
         <span
           class="
@@ -53,7 +53,7 @@
         <transition
           name="fade"
           @after-enter="showSchool = true"
-          :duration="{ enter: 5000 }"
+          :duration="{ enter: 4000 }"
         >
         <h1 class="text-md-h2
           text-h3

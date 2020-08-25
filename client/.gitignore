@@ -2,6 +2,7 @@
 node_modules
 /dist
 /hidden
+fbConfig.json
 
 # firebase files
 /.firebase

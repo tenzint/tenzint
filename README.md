@@ -40,4 +40,7 @@ Also, made a simple animation (actually, nested transitions) on the first page. 
 
 * Changed wordy links of contact info into icon buttons with tooltips on hover. Now using a button to download resume pdf from firebase storage. Not done yet.
 
+* Fixed the bug on 'more/less-details' button of Hobby/TableTennis. My data var was 'tabletennisSummary', and I was misusing 'tableTennisSummary' here and there. I'm surprised the UX was working after a first unproductive click.
+Now, the bug is fixed.
+
 -------------------------------------

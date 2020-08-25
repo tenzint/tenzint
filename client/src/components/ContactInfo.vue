@@ -106,8 +106,6 @@
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
-              href="https://github.com/tenzint"
-              target="_blank"
               icon
               :color="counterThemeColorClass"
               x-large
@@ -116,6 +114,7 @@
               rounded
               v-bind="attrs"
               v-on="on"
+              @click="downloadResumePdf"
             >
             <v-icon
               :color="counterThemeColorClass"
@@ -131,12 +130,54 @@
 </template>
 <script>
 import { mapState } from 'vuex';
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
 
 export default {
   computed: {
     ...mapState([
       'counterThemeColorClass',
     ]),
+  },
+  methods: {
+    downloadResumePdf() {
+      const resumeRef = firebase.storage()
+        .ref('resume.pdf');
+      resumeRef.getDownloadURL().then((url) => {
+        // `url` is the download URL
+
+        // This can be downloaded directly:
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        /*
+        xhr.onload = function (event) {
+          const blob = xhr.response;
+        }; */
+        xhr.open('GET', url);
+        xhr.send();
+      }).catch((error) => {
+        // Handle any errors
+        switch (error.code) {
+          case 'storage/object-not-found':
+            // File doesn't exist
+            break;
+
+          case 'storage/unauthorized':
+            // User doesn't have permission to access the object
+            break;
+
+          case 'storage/canceled':
+            // User canceled the upload
+            break;
+
+          case 'storage/unknown':
+            // Unknown error occurred, inspect the server response
+            break;
+          default:
+            break;
+        }
+      });
+    },
   },
 };
 </script>
