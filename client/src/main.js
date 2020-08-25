@@ -5,6 +5,10 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import vuetify from './plugins/vuetify';
+import 'firebase/auth';
+import 'firebase/storage';
+
+const fbConfig = require('@/../hidden/firebaseConfig.json');
 
 // async load fonts
 WebFontLoader.load({
@@ -14,6 +18,7 @@ WebFontLoader.load({
 });
 
 Vue.config.productionTip = false;
+firebase.initializeApp(fbConfig);
 
 new Vue({
   router,

@@ -19,3 +19,25 @@ Steps taken/problems faced while making this website.
 * deleted firebase init results in root directory, and redid firebase init in client directory. During `npm run build`, the old error regarding vue.ps1 resurfaced. I ran `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser` in root directory via powershell to fix this. Now dist is ready to be deployed!
 
 * when changing color of `a` links, it's important to also change color of `a:visited`, especially if the background color of link is blue (default color)
+
+-------------------------------------------------
+
+* Added a color theme. Made sure to only use color theme, black, white, or shades of grey. Got rid of other colors like blue etc
+
+* Made web app spacious. Every major components have a min-height of 100vh. For certain elements, I gave them grid-col of 4 instead of 6 for laptops+
+and grid-col of 8 instead of 12 for mobiles. Of course with justify="center" on grid-row.
+
+* Made lazy loading for body of components, excluding the titles. Went beyond the default settings and made components to vanish off-screen.
+Reference: <Stack Overflow Page>
+
+* Updated navigation drawer list links. These links will no longer use router via `to` prop.
+Instead, they will use `goTo` prop on ID'ed elements. I also used v-intersect, vuex and v-list-item to highlight the right link based on scroll position.
+Reference: <https://stackoverflow.com/questions/59614413/update-selected-item-in-vuetify-navigation-drawer-while-scrolling-vertical/63554705#63554705>
+
+* Used transitions on components, mode="out-in". Check out Hobby 'More/Less Details' buttons.
+
+Also, made a simple animation (actually, nested transitions) on the first page. Added delay for human intimacy.
+
+* Changed wordy links of contact info into icon buttons with tooltips on hover. Now using a button to download resume pdf from firebase storage. Not done yet.
+
+-------------------------------------
