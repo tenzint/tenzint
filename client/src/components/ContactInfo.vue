@@ -54,12 +54,12 @@
               text
               ripple
               rounded
+              v-bind="attrs"
+              v-on="on"
             >
             <v-icon
               :color="counterThemeColorClass"
               x-large
-              v-bind="attrs"
-              v-on="on"
             >mdi-github</v-icon>
             </v-btn>
           </template>
@@ -94,6 +94,36 @@
             </v-btn>
           </template>
           <span class="font-weight-bold">linkedin.com/in/tenzin-thabkhae-54a37069</span>
+        </v-tooltip>
+      </v-col>
+      <v-col
+        cols="auto"
+        class="text-body-2
+          text-md-body-1
+          font-weight-thin
+        "
+      >
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              href="https://github.com/tenzint"
+              target="_blank"
+              icon
+              :color="counterThemeColorClass"
+              x-large
+              text
+              ripple
+              rounded
+              v-bind="attrs"
+              v-on="on"
+            >
+            <v-icon
+              :color="counterThemeColorClass"
+              x-large
+            >mdi-file-account</v-icon>
+            </v-btn>
+          </template>
+          <span class="font-weight-bold">resume - TBD</span>
         </v-tooltip>
       </v-col>
     </v-row>

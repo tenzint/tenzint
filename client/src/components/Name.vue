@@ -23,6 +23,7 @@
           name="fade"
           @after-appear="showIm = true"
           appear
+          :duration="{ enter: 3000 }"
         >
         <span
           class="
@@ -37,6 +38,7 @@
         <transition
           name="fade"
           @after-enter="showName = true"
+          :duration="{ enter: 1000 }"
         >
         <span
           class="
@@ -51,6 +53,7 @@
         <transition
           name="fade"
           @after-enter="showSchool = true"
+          :duration="{ enter: 5000 }"
         >
         <h1 class="text-md-h2
           text-h3
@@ -62,6 +65,7 @@
         </transition>
         <transition
           name="fade"
+          :duration="{ enter: 3000 }"
         >
         <h6 class="text-subtitle-2
           text-md-body-1
@@ -78,6 +82,7 @@
     </v-row>
     <transition
       name="fade"
+      :duration="{ enter: 3000 }"
     >
       <ContactInfo
         v-if="showSchool"
