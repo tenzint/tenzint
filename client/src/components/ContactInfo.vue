@@ -1,0 +1,127 @@
+<template>
+  <v-container fluid>
+    <v-row
+      align="center"
+      justify="center"
+    >
+      <v-col
+        cols="auto"
+        class="text-body-2
+          text-md-body-1
+          font-weight-thin
+        "
+      >
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              href="mailto: tenzin.thabkhae@mail.utoronto.ca"
+              target="_blank"
+              icon
+              :color="counterThemeColorClass"
+              x-large
+              text
+              tile
+              ripple
+              rounded
+            >
+            <v-icon
+              :color="counterThemeColorClass"
+              x-large
+              v-bind="attrs"
+              v-on="on"
+            >mdi-email</v-icon>
+            </v-btn>
+          </template>
+          <span
+            class="font-weight-bold">tenzin.thabkhae@mail.utoronto.ca</span>
+        </v-tooltip>
+      </v-col>
+      <v-col
+        cols="auto"
+        class="text-body-2
+          text-md-body-1
+          font-weight-thin
+        "
+      >
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              href="https://github.com/tenzint"
+              target="_blank"
+              icon
+              :color="counterThemeColorClass"
+              x-large
+              text
+              ripple
+              rounded
+            >
+            <v-icon
+              :color="counterThemeColorClass"
+              x-large
+              v-bind="attrs"
+              v-on="on"
+            >mdi-github</v-icon>
+            </v-btn>
+          </template>
+          <span class="font-weight-bold">github.com/tenzint</span>
+        </v-tooltip>
+      </v-col>
+      <v-col
+        cols="auto"
+        class="text-body-2
+          text-md-body-1
+          font-weight-thin
+        "
+      >
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              href="https://www.linkedin.com/in/tenzin-thabkhae-54a37069/"
+              target="_blank"
+              icon
+              :color="counterThemeColorClass"
+              x-large
+              text
+              ripple
+              rounded
+            >
+            <v-icon
+              :color="counterThemeColorClass"
+              x-large
+              v-bind="attrs"
+              v-on="on"
+            >mdi-linkedin</v-icon>
+            </v-btn>
+          </template>
+          <span class="font-weight-bold">linkedin.com/in/tenzin-thabkhae-54a37069</span>
+        </v-tooltip>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+<script>
+import { mapState } from 'vuex';
+
+export default {
+  computed: {
+    ...mapState([
+      'counterThemeColorClass',
+    ]),
+  },
+};
+</script>
+<style scoped>
+  a, a:link, a:visited {
+    color: #FCE4EC;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #AB47BC;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  #name-two {
+    min-height: 70vh;
+  }
+</style>

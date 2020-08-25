@@ -2,18 +2,20 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      clipped-left
+      :color="themeColorClass"
       dark
       hide-on-scroll
+      :value="false"
     >
       <v-spacer></v-spacer>
       <v-snackbar
-        :value="true"
-        :timeout="6000"
+        value="true"
+        timeout="6000"
         dark
         top
         right
-        color="green"
+        :color="themeColorClass"
         elevation="20"
         shaped
         transition="fab-transition"
@@ -22,7 +24,7 @@
         <template v-slot:action="{ attrs }">
         <v-chip
           class="font-weight-black"
-          color="green"
+          :color="themeColorClass"
           text-color="white"
           v-bind="attrs"
         >
@@ -35,7 +37,7 @@
             size="96"
             right
           >
-            ⇑
+            <v-icon>mdi-arrow-up-circle-outline</v-icon>
           </v-avatar>
         </v-chip>
       </template>
@@ -59,12 +61,7 @@
     <v-navigation-drawer
       app
       v-model="drawer"
-      color="primary lighten-1"
-      v-click-outside="{
-        handler: onClickOutsideStandard(e),
-        exclude: ['outside-click-exclude'],
-        closeConditional,
-      }"
+      :color="themeColorClass"
     >
       <v-list ripple>
         <v-list-item
@@ -72,16 +69,16 @@
         >
           <v-list-item-content>
             <v-list-item-title
-              class=
-              "
+              :class=
+              "`
                 pt-4
                 pb-0
                 mb-0
-                white--text
                 text-h4
                 text-center
                 font-weight-bold
-              "
+                ${counterThemeColorText}
+              `"
             >
               TENZIN
             </v-list-item-title>
@@ -92,15 +89,15 @@
         >
           <v-list-item-content>
             <v-list-item-title
-              class=
-              "
+              :class=
+              "`
                 mt-0
                 pt-0
-                white--text
                 text-h4
                 text-center
                 font-weight-bold
-              "
+                ${counterThemeColorText}
+              `"
             >
               THABKHAE
             </v-list-item-title>
@@ -110,81 +107,170 @@
       <v-divider>
       </v-divider>
       <v-list
-        dense
         dark
+        dense
         rounded
+        nav
       >
         <v-list-item
           link
-          to="/"
+          @click="$vuetify.goTo(
+            '#nav-profile',
+            {
+              duration: 1500,
+              easing: 'easeInOutQuint',
+            }
+          )"
+          :input-value="nameAc"
+          color="white"
         >
           <v-list-item-action>
-            <v-icon>mdi-account-circle</v-icon>
+            <v-icon
+              :class="counterThemeColorText"
+            >mdi-account-circle</v-icon>
           </v-list-item-action>
-          <v-list-item-content>
+          <v-list-item-content
+          :class="counterThemeColorText">
             Profile
           </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
-          to="#nav-skills"
+          @click="$vuetify.goTo(
+            '#nav-skills',
+            {
+              duration: 1500,
+              easing: 'easeInOutQuint',
+            }
+          )"
+          :input-value="skillsAc"
+          color="white"
         >
           <v-list-item-action>
-            <v-icon>mdi-file-cog</v-icon>
+            <v-icon
+              :class="counterThemeColorText"
+            >mdi-file-cog</v-icon>
           </v-list-item-action>
-          <v-list-item-content>
+          <v-list-item-content
+            :class="counterThemeColorText"
+          >
             Skills
           </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
-          to="#nav-experience"
+          @click="$vuetify.goTo(
+            '#nav-experience',
+            {
+              duration: 1500,
+              easing: 'easeInOutQuint',
+            }
+          )"
+          :input-value="expAc"
+          color="white"
         >
           <v-list-item-action>
-            <v-icon>mdi-school-outline</v-icon>
+            <v-icon
+              :class="counterThemeColorText"
+            >mdi-thumb-up</v-icon>
           </v-list-item-action>
-          <v-list-item-content>
+          <v-list-item-content
+            :class="counterThemeColorText"
+          >
             Relevant Experience
           </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
-          to="#nav-projects"
+          @click="$vuetify.goTo(
+            '#nav-projects',
+            {
+              duration: 1500,
+              easing: 'easeInOutQuint',
+            }
+          )"
+          :input-value="ppAc"
+          color="white"
         >
           <v-list-item-action>
-            <v-icon>mdi-wrench</v-icon>
+            <v-icon
+              :class="counterThemeColorText"
+            >mdi-wrench</v-icon>
           </v-list-item-action>
-          <v-list-item-content>
+          <v-list-item-content
+            :class="counterThemeColorText"
+          >
             Personal Projects
           </v-list-item-content>
         </v-list-item>
-
+        <v-list-item
+          link
+          @click="$vuetify.goTo(
+            '#nav-hobby',
+            {
+              duration: 1500,
+              easing: 'easeInOutQuint',
+            }
+          )"
+          :input-value="hobbyAc"
+          color="white"
+        >
+          <v-list-item-action>
+            <v-icon
+              :class="counterThemeColorText"
+            >mdi-table-tennis</v-icon>
+          </v-list-item-action>
+          <v-list-item-content
+            :class="counterThemeColorText"
+          >
+            Hobbies
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-main>
+    <v-main
+      id="page-one"
+    >
       <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 
 export default {
   name: 'App',
 
-  components: {
-  },
-
   data: () => ({
     drawer: false,
   }),
-
+  computed: {
+    ...mapState([
+      'themeColor',
+      'themeColorClass',
+      'counterThemeColorText',
+      'counterThemeColorClass',
+      'nameAc',
+      'skillsAc',
+      'expAc',
+      'ppAc',
+      'hobbyAc',
+    ]),
+  },
   methods: {
-    onClickOutsideStandard() {
-    },
     closeConditional() {
       return this.drawer;
     },
   },
 };
 </script>
+<style lang="scss">
+  @import '@/sass/variables.scss';
+
+</style>
+<style scoped>
+  #page-one {
+    height: 100%;
+  }
+</style>

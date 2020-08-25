@@ -1,7 +1,11 @@
 <template>
   <v-container
-    class="grey lighten-2 indigo--text text--darken-2
-    px-4 py-8"
+    :class="`
+      grey lighten-5
+      black--text
+      px-4
+      py-8
+    `"
     fluid
   >
     <v-row
@@ -10,48 +14,82 @@
       <v-col
         class="text-center"
       >
-        <h1 class="text-h4 text-md-h3
-          indigo--text
-          text--darken-4
-          "
+        <h1
+          :class="`
+            text-h4
+            text-md-h3
+            ${themeColorText}
+          `"
           id="nav-projects"
         >Personal Projects</h1>
       </v-col>
     </v-row>
+    <v-lazy
+      :value="ppC"
+      @input="setPpC"
+      :options="{
+        threshold: .5
+      }"
+      min-height="100vh"
+      v-intersect="onPPIntersect"
+    >
+    <v-container>
     <v-row
       class="mx-4"
+      justify="center"
     >
       <v-col
-        cols="12"
+        cols="10"
+        md="8"
+        class="elevation-15 pa-4"
       >
-        <h4 class="text-heading-5 text-md-heading-4
-          font-weight-bold
-          green--text
-          text--darken-3
-        ">Journal Website
-        (<a href="https://www.tenzinandhobbes.web.app" target="_blank">https://www.tenzinandhobbes.web.app</a>)</h4>
+        <h4
+          :class="`
+            text-heading-5
+            text-md-heading-4
+            font-weight-bold
+            pt-4
+            ${themeColorText}
+          `"
+        >Journal Website
+        (<a href="https://tenzinandhobbes.web.app" target="_blank">https://tenzinandhobbes.web.app</a>)</h4>
         <ul class="text-body-2
           text-md-body-1
           mx-4"
         >
           <li>Developed a web app using Vue.js that allows users to publish and share journals</li>
           <li>Incorporated firebase as backend for data storage, web hosting and authentication</li>
+          <li>Solved Firebase's Google signin error
+          caused by the new 'sameSite' feature
+          launched by Google in July 2020 by implementing Google API's oAuth2 signin.
+          The debugging process can be found on my
+          <a href=
+          "https://stackoverflow.com/questions/63455143/how-to-resolve-rangeerror-maximum-call-stack-size-exceeded-via-firebase-signi"
+          target="_blank">Stack Overflow</a>
+          question page.
           <li><span class="text-decoration-underline">Utilized:</span>
-            Vue.js, Firebase</li>
+            Vue.js, Firebase, Google API</li>
         </ul>
       </v-col>
     </v-row>
     <v-row
       class="mx-4"
+      justify="center"
     >
       <v-col
-        cols="12"
+        cols="10"
+        md="8"
+        class="elevation-15 pa-4"
       >
-        <h4 class="text-heading-5 text-md-heading-4
-          font-weight-bold
-          green--text
-          text--darken-3
-        ">Discord.js mini-projects</h4>
+        <h4
+          :class="`
+            text-heading-5
+            text-md-heading-4
+            font-weight-bold
+            pt-4
+            ${themeColorText}
+          `"
+        >Discord.js mini-projects</h4>
         <ul class="text-body-2
           text-md-body-1
           mx-4"
@@ -98,15 +136,45 @@
         </ul>
       </v-col>
     </v-row>
+    </v-container>
+    </v-lazy>
   </v-container>
 </template>
 
 <script>
-export default {
+import { mapState, mapMutations } from 'vuex';
 
+export default {
+  computed: {
+    ...mapState([
+      'themeColorText',
+      'counterThemeColorClass',
+      'ppC',
+      'ppAc',
+    ]),
+  },
+  methods: {
+    ...mapMutations([
+      'setPpC',
+      'setPpAc',
+    ]),
+    onPPIntersect(entries) {
+      this.setPpAc(entries[0].isIntersecting);
+      this.setPpC(entries[0].isIntersecting);
+    },
+  },
 };
 </script>
 
-<style>
-
+<style scoped>
+  a, a:link, a:visited {
+    color: #33691E;
+    text-decoration: underline;
+  }
+  a:hover {
+    color: #33691E;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 20px;
+  }
 </style>

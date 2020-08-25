@@ -1,23 +1,19 @@
 <template>
   <div class="home">
-    <Name></Name>
-    <Skills></Skills>
-    <Experience></Experience>
-    <PersonalProjects></PersonalProjects>
-    <Hobby></Hobby>
+    <Name class="compItem"></Name>
+    <Skills class="compItem"></Skills>
+    <Experience class="compItem"></Experience>
+    <PersonalProjects class="compItem"></PersonalProjects>
+    <Hobby class="compItem"></Hobby>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// const Foo = () => import('./Foo.vue')
-// lazy loading - async component loading
 const Name = () => import('@/components/Name.vue');
 const Skills = () => import('@/components/Skills.vue');
 const Experience = () => import('@/components/Experience.vue');
 const PersonalProjects = () => import('@/components/PersonalProjects.vue');
 const Hobby = () => import('@/components/Hobby.vue');
-
 export default {
   name: 'Home',
   components: {
@@ -30,14 +26,16 @@ export default {
 };
 </script>
 
+<style lang="scss">
+  @import '@/sass/variables.scss';
+
+</style>
 <style>
   body {
     margin: 0;
     padding: 0;
   }
-  .tenz-block {
-    display: block;
-    height: 100vh;
-    text-align: center;
+  .compItem {
+    min-height: 100vh;
   }
 </style>

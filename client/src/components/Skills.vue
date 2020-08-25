@@ -1,7 +1,11 @@
 <template>
   <v-container
-    class="orange lighten-4 indigo--text text--darken-2
-    px-4 py-8"
+    class="
+      light-green
+      lighten-5
+      black--text
+      px-4 py-8
+    "
     fluid
   >
     <v-row
@@ -10,77 +14,561 @@
       <v-col
         class="text-center"
       >
-        <h1 class="text-h4 text-md-h3
-          indigo--text
-          text--darken-4
-          "
+        <h1
+          :class="`
+            text-h4
+            text-md-h3
+            ${themeColorText}
+          `"
           id="nav-skills"
         >Skills At a Glance</h1>
       </v-col>
     </v-row>
-    <v-row
-      class="mx-4"
+    <v-lazy
+      :value="skillsC"
+      @value="setSkillsC"
+      :options="{
+        threshold: .5
+      }"
+      min-height="100vh"
+      v-intersect="onSkillsIntersect"
     >
-      <v-col
-        cols="12"
-        md="6"
+      <v-row
+        justify="center"
+        class="mx-4"
       >
-        <h4 class="text-heading-5 text-md-heading-4
-          font-weight-bold
-          indigo--text
-          text--darken-3
-        ">Software</h4>
-        <ul class="text-body-2
-          text-md-body-1
-          mx-4"
+        <v-col
+          cols="10"
+          md="4"
+          class="elevation-16 pa-4"
         >
-          <li class="text-decoration-underline">Proficient:</li>
-          <li>Vue.js framework (Vue Router, VueX Store, Vuetify.js)</li>
-          <li>Express.js, Adonis.js</li>
-          <li>html5, css3, javascript</li>
-          <li>jQuery, AJAX, JSON</li>
-          <li class="text-decoration-underline">Familiar:</li>
-          <li>Selenium</li>
-          <li>php, PDO</li>
-          <li><span class="text-decoration-underline">
-            Version control:</span>
-            git, SVN</li>
-          <li><span class="text-decoration-underline">Database:</span>
-            SQL, MongoDB, MySQL, Firebase realtime database</li>
-          <li><span class="text-decoration-underline">Cloud/Serverless:</span>
-            Firebase authentication, hosting, storage</li>
-        </ul>
-      </v-col>
-      <v-col cols="12" md="6">
-        <h4 class="text-heading-5 text-md-heading-4
-          font-weight-bold
-          indigo--text
-          text--darken-3
-        ">Node.js frameworks</h4>
-        <ul class="text-body-2
-          text-md-body-1
-          mx-4"
+          <h4
+            :class="`
+            text-heading-5
+            text-md-heading-4
+            font-weight-bold
+            ${themeColorText}
+            ml-4
+            text-decoration-underline
+          `">Software</h4>
+          <div class="text-body-2
+            text-md-body-1
+            mx-4"
+          >
+            <v-chip
+              class="
+                ma-2
+                elevation-8
+              "
+              :color="skillsChipTitleColor"
+            >
+              <v-icon left>
+              mdi-fire
+              </v-icon>
+              <span
+              class="text-decoration-underline">
+              Proficient:
+              </span>
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Vue.js</v-chip>
+            {
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Vue Router
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >VueX Store
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Vuetify.js
+            </v-chip>
+            }
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Express.js</v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Adonis.js</v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >C</v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >C++</v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Java</v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >html5</v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >css3</v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >javascript</v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >jQuery</v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >AJAX</v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >JSON</v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-2
+                elevation-8
+              "
+              :color="skillsChipTitleColor"
+            >
+              <v-icon left>
+              mdi-pine-tree-fire
+              </v-icon>
+              <span
+              class="text-decoration-underline">
+              Familiar:
+              </span>
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Selenium
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >php
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >PDO
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-2
+                elevation-8
+                text-decoration-underline
+              "
+              :color="skillsChipTitleColor"
+            >
+              Version control:
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >git
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >SVN
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-2
+                elevation-8
+                text-decoration-underline
+              "
+              :color="skillsChipTitleColor"
+            >
+              Database:
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >SQL
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >MongoDB
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >MySQL
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Firebase realtime database
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-2
+                elevation-8
+                text-decoration-underline
+              "
+              :color="skillsChipTitleColor"
+            >
+              Cloud/Serverless:
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Firebase authentication
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Firebase hosting
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Firebase storage
+            </v-chip>
+          </div>
+        </v-col>
+        <v-col
+          cols="10"
+          md="4"
+          class="elevation-16 pa-4"
         >
-          <li class="text-decoration-underline">Proficient:</li>
-          <li>Axios, request, request-promise, bluebird</li>
-          <li>body-parser, is-json, cors, promise</li>
-          <li>canvas</li>
-          <li>moment.js</li>
-          <li>ytdl-core, youtube-api</li>
-          <li>Discord.js</li>
-          <li class="text-decoration-underline">Familiar:</li>
-          <li>node-schedule, chokidar
-          <li>tmi.js (twitch messaging interface),
-            (non-NodeJS) twitch API (GET challenge + POST subscribe)</li>
-        </ul>
-      </v-col>
-    </v-row>
+          <h4 :class="`
+            text-heading-5
+            text-md-heading-4
+            font-weight-bold
+            ${themeColorText}
+            ml-4
+            text-decoration-underline
+          `">Node.js frameworks</h4>
+          <div class="text-body-2
+            text-md-body-1
+            mx-4"
+          >
+            <v-chip
+              class="
+                ma-2
+                elevation-8
+              "
+              :color="skillsChipTitleColor"
+            >
+              <v-icon left>
+              mdi-fire
+              </v-icon>
+              <span
+              class="text-decoration-underline">
+              Proficient:
+              </span>
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Axios
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >request
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >request-promise
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >bluebird
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >canvas
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >moment.js
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >ytdl-core
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >youtube-api
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Discord.js
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-2
+                elevation-8
+              "
+              :color="skillsChipTitleColor"
+            >
+              <v-icon left>
+              mdi-pine-tree-fire
+              </v-icon>
+              <span
+              class="text-decoration-underline">
+              Familiar:
+              </span>
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >node-schedule
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >chokidar
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >tmi.js
+            </v-chip>(twitch messaging interface)
+            <br />
+            (non-NodeJS)
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >twitch API
+            </v-chip>
+            (GET challenge + POST subscribe)
+            <br />
+            <br />
+            <v-chip
+              class="
+                ma-2
+                elevation-8
+              "
+              :color="skillsChipTitleColor"
+            >
+              <v-icon left>
+              mdi-alert-decagram
+              </v-icon>
+              <span
+              class="text-decoration-underline">
+              Qualities:
+              </span>
+            </v-chip>
+            <br />
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >OOP
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >Agile development
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >REST API
+            </v-chip>
+          </div>
+        </v-col>
+      </v-row>
+    </v-lazy>
   </v-container>
 </template>
 
 <script>
-export default {
+import { mapState, mapMutations } from 'vuex';
 
+export default {
+  computed: {
+    ...mapState([
+      'themeColorClass',
+      'themeColorText',
+      'skillsChipTitleColor',
+      'skillsChipBodyColor',
+      'skillsC',
+      'skillsAc',
+    ]),
+  },
+  methods: {
+    ...mapMutations([
+      'setSkillsC',
+      'setSkillsAc',
+    ]),
+    onSkillsIntersect(entries) {
+      this.setSkillsAc(entries[0].isIntersecting);
+      this.setSkillsC(entries[0].isIntersecting);
+    },
+  },
 };
 </script>
 

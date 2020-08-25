@@ -1,82 +1,156 @@
 <template>
-  <v-parallax
-    dark
-    src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+  <v-container
+    fluid
+    :class="`
+      ${themeColorClass}
+      ${counterThemeColorText}
+    `"
+    id="nav-profile"
+    v-intersect="onIntersect"
   >
     <v-row
       align="center"
       justify="center"
       no-gutters
+      id="name-two"
     >
       <v-col
         cols="12"
         class="text-center
-        mt-8
-        mb-0
-        pb-0
         "
       >
-        <v-avatar
-          size="164"
+        <transition
+          name="fade"
+          @after-appear="showIm = true"
+          appear
         >
-          <v-img
-            src="https://d2l0wy9lsui5uy.cloudfront.net/c/u/f67894297b6134a6b759b3a9ec15b6cb/2018/11/20102541/8-acspicious-symbols-in-one-art.jpg"
-            alt="Tibetan Auspicious Symbol"
-            width="250"
-            contain
-            aspect-ratio="1"
-          >
-          </v-img>
-        </v-avatar>
-        <h1 id="nav-profile" class="text-md-h1
-          text-h2
-          font-weight-bold
-          pt-8
-          mb-0 pb-0
+        <span
+          class="
+            text-subtitle-2
+            text-md-body-1
+            display-1
+            font-weight-black
           "
-        >Tenzin Thabkhae</h1>
-      </v-col>
-      <v-col class="text-center
-        mt-0 pt-0
-      " cols="12">
-        <h6 class="text-subtitle-2 text-md-body-1 display-1">
+          v-if="showHi"
+        >Hi</span>
+        </transition>
+        <transition
+          name="fade"
+          @after-enter="showName = true"
+        >
+        <span
+          class="
+            text-subtitle-2
+            text-md-body-1
+            display-1
+            font-weight-black
+          "
+          v-if="showIm"
+        >, I'm</span>
+        </transition>
+        <transition
+          name="fade"
+          @after-enter="showSchool = true"
+        >
+        <h1 class="text-md-h2
+          text-h3
+          font-weight-bold
+          white--text
+          "
+          v-if="showName"
+        >TENZIN THABKHAE</h1>
+        </transition>
+        <transition
+          name="fade"
+        >
+        <h6 class="text-subtitle-2
+          text-md-body-1
+          display-1
+          font-weight-black
+          mt-4
+        "
+          v-if="showSchool"
+        >
           University of Toronto, Software Engineering
         </h6>
-        <h4 class="text-body-2 text-md-body-1 font-weight-thin">
-          <span class="font-weight-bold">contact: </span>
-          <a href="mailto: tenzin.thabkhae@mail.utoronto.ca">tenzin.thabkhae@mail.utoronto.ca</a>
-          <span class="mx-4">|</span> <span class="font-weight-bold">github: </span>
-          <a href="https://github.com/tenzint"
-            target="_blank"
-          >github.com/tenzint</a>
-          <span class="mx-4">|</span> <span class="font-weight-bold">linkedin: </span>
-          <a href="https://www.linkedin.com/in/tenzin-thabkhae-54a37069/"
-            target="_blank"
-          >www.linkedin.com/in/tenzin-thabkhae-54a37069/</a>
-        </h4>
+        </transition>
       </v-col>
     </v-row>
-  </v-parallax>
+    <transition
+      name="fade"
+    >
+      <ContactInfo
+        v-if="showSchool"
+      ></ContactInfo>
+    </transition>
+  </v-container>
 </template>
 
 <script>
-export default {
+import { mapState, mapMutations } from 'vuex';
 
+const ContactInfo = () => import('./ContactInfo.vue');
+export default {
+  components: {
+    ContactInfo,
+  },
+  data() {
+    return {
+      showHi: true,
+      showIm: false,
+      showName: false,
+      showSchool: false,
+    };
+  },
+  computed: {
+    ...mapState([
+      'themeColorClass',
+      'counterThemeColorText',
+      'nameC',
+      'nameAc',
+    ]),
+  },
+  methods: {
+    ...mapMutations([
+      'setNameC',
+      'setNameAc',
+    ]),
+    onNameIntersect(entries) {
+      this.setNameC(entries[0].nameC);
+    },
+    onIntersect(entries) {
+      this.setNameAc(entries[0].isIntersecting);
+    },
+  },
 };
 </script>
 
 <style scoped>
   a, a:link, a:visited {
-    color: #ffffff;
+    color: #FCE4EC;
     text-decoration: none;
   }
   a:hover {
-    color: #D8B027;
-    background-color: #274FD8;
+    color: #AB47BC;
     text-decoration: underline;
     font-weight: bold;
+    font-size: 20px;
   }
-  .roundImg {
-    border-radius: 50%;
+  #name-two {
+    min-height: 70vh;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .3s ease;
+  }
+
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+  .fade-appear-active {
+    transition: opacity .3s ease;
+  }
+
+  .fade-appear {
+    opacity: 0;
   }
 </style>
