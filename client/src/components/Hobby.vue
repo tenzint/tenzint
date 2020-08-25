@@ -178,6 +178,7 @@ export default {
       }
     },
     toggleTableTennis() {
+      this.tabletennisSummary = !this.tabletennisSummary;
       if (this.tabletennisSummary) {
         this.viewTableTennis = TableTennisLess;
       } else {
