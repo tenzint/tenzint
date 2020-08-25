@@ -17,7 +17,7 @@
               href="mailto: tenzin.thabkhae@mail.utoronto.ca"
               target="_blank"
               icon
-              :color="counterThemeColorClass"
+              :color="themeColorClass"
               x-large
               text
               tile
@@ -49,7 +49,7 @@
               href="https://github.com/tenzint"
               target="_blank"
               icon
-              :color="counterThemeColorClass"
+              :color="themeColorClass"
               x-large
               text
               ripple
@@ -79,7 +79,7 @@
               href="https://www.linkedin.com/in/tenzin-thabkhae-54a37069/"
               target="_blank"
               icon
-              :color="counterThemeColorClass"
+              :color="themeColorClass"
               x-large
               text
               ripple
@@ -106,18 +106,50 @@
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
+              href="https://freecodecamp.org/tenzint"
+              target="_blank"
               icon
-              :color="counterThemeColorClass"
+              :color="themeColorClass"
               x-large
               text
               ripple
               rounded
+            >
+            <v-icon
+              :color="counterThemeColorClass"
+              x-large
+              v-bind="attrs"
+              v-on="on"
+            >mdi-fire</v-icon>
+            </v-btn>
+          </template>
+          <span
+            class="
+              font-weight-bold
+            "
+          >freecodecamp.org/tenzint</span>
+        </v-tooltip>
+      </v-col>
+      <v-col
+        cols="auto"
+        class="text-body-2
+          text-md-body-1
+          font-weight-thin
+        "
+      >
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              :color="counterThemeColorClass"
+              fab
+              x-large
+              ripple
               v-bind="attrs"
               v-on="on"
               @click="downloadResumePdf"
             >
             <v-icon
-              :color="counterThemeColorClass"
+              :color="themeColorClass"
               x-large
             >mdi-file-account</v-icon>
             </v-btn>
@@ -137,6 +169,7 @@ export default {
   computed: {
     ...mapState([
       'counterThemeColorClass',
+      'themeColorClass',
     ]),
   },
   methods: {

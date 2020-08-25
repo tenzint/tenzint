@@ -43,4 +43,5 @@ Also, made a simple animation (actually, nested transitions) on the first page. 
 * Fixed the bug on 'more/less-details' button of Hobby/TableTennis. My data var was 'tabletennisSummary', and I was misusing 'tableTennisSummary' here and there. I'm surprised the UX was working after a first unproductive click.
 Now, the bug is fixed.
 
+* gsutil cors set cors.json gs://tenzint.appspot.com
 -------------------------------------
