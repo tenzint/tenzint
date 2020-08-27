@@ -3,7 +3,7 @@ node_modules
 /dist
 /hidden
 fbConfig.json
-
+public/google0bda2bf50154fefe.html
 # firebase files
 /.firebase
 
