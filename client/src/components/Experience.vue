@@ -1,8 +1,8 @@
 <template>
   <v-container
     class="
-      green
-      lighten-5
+      grey
+      lighten-4
       px-4
       py-8
     "

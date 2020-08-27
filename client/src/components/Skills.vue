@@ -1,7 +1,7 @@
 <template>
   <v-container
     class="
-      light-green
+      grey
       lighten-5
       black--text
       px-4 py-8
