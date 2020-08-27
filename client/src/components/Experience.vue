@@ -62,7 +62,7 @@
           <v-card-title
             class="title"
           >
-          Web Development Volunteer, Toronto Grace Hospital
+          Web Development Volunteer, Toronto Grace Health Centre
           </v-card-title>
           <v-card-text
             :class="`
