@@ -24,6 +24,8 @@ export default new Vuex.Store({
     expAc: false,
     ppAc: false,
     hobbyAc: false,
+    // style object for Name.vue component
+    nameStyle: { minHeight: '100vh' },
   },
   mutations: {
     setNameC(state, val) {
@@ -55,6 +57,9 @@ export default new Vuex.Store({
     },
     setHobbyAc(state, val) {
       state.hobbyAc = val;
+    },
+    setNameStyle(state, styleArray) {
+      state.nameStyle = styleArray;
     },
   },
   actions: {

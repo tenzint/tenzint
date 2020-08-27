@@ -86,9 +86,20 @@
                 black--text
               "
             >
+              <li>Developed a full-stack prototype of ticketing system using
+              Vue.js and Adonis.js for use between nurses and maintenance staff</li>
+              <li>Developed an automation to web scrape, download and print
+              PDF files from intranet by using Selenium and chokidar</li>
+              <li>Tested and debugged backend API functionalities
+              by proficiently using Postman app</li>
+              <li>Designed and developed intuitive, responsive and reactive
+              UI by writing codes in Vue.js, Vuetify.js, HTML
+              and CSS</li>
+              <li>Secured and shared my source codes with my project
+              manager by using Bitbucket git repository</li>
               <li><span class="text-decoration-underline">Utilized:</span>
                 Vue.js, Adonis.js, html5, css3,
-              Selenium, git, MySQL, MongoDB, moment.js, Chokidar, node-schedule</li>
+              Selenium, git, MySQL, MongoDB, moment.js, chokidar, node-schedule</li>
             </ul>
           </v-card-text>
         </v-card>

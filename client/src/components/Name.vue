@@ -12,7 +12,7 @@
       align="center"
       justify="center"
       no-gutters
-      id="name-two"
+      :style="mainStyle"
     >
       <v-col
         cols="12"
@@ -23,7 +23,7 @@
           name="fade"
           @after-appear="showIm = true"
           appear
-          :duration="{ enter: 3000 }"
+          :duration="{ enter: 2000 }"
         >
         <span
           class="
@@ -38,7 +38,7 @@
         <transition
           name="fade"
           @after-enter="showName = true"
-          :duration="{ enter: 1500 }"
+          :duration="{ enter: 1000 }"
         >
         <span
           class="
@@ -82,6 +82,7 @@
     </v-row>
     <transition
       name="fade"
+      @after-enter="setContainerHeight"
       :duration="{ enter: 3000 }"
     >
       <ContactInfo
@@ -105,6 +106,7 @@ export default {
       showIm: false,
       showName: false,
       showSchool: false,
+      mainStyle: { minHeight: '80vh' },
     };
   },
   computed: {
@@ -119,12 +121,17 @@ export default {
     ...mapMutations([
       'setNameC',
       'setNameAc',
+      'setNameStyle',
     ]),
     onNameIntersect(entries) {
       this.setNameC(entries[0].nameC);
     },
     onIntersect(entries) {
       this.setNameAc(entries[0].isIntersecting);
+    },
+    setContainerHeight() {
+      this.setNameStyle({ minHeight: '60vh' });
+      this.mainStyle = { minHeight: '50vh' };
     },
   },
 };
@@ -140,6 +147,9 @@ export default {
     text-decoration: underline;
     font-weight: bold;
     font-size: 20px;
+  }
+  .nav-profile {
+    min-height: 100vh;
   }
   #name-two {
     min-height: 70vh;

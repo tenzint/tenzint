@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <Name class="compItem"></Name>
+    <Name
+      :style="nameStyle"
+    ></Name>
     <Skills class="compItem"></Skills>
     <Experience class="compItem"></Experience>
     <PersonalProjects class="compItem"></PersonalProjects>
@@ -9,6 +11,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 const Name = () => import('@/components/Name.vue');
 const Skills = () => import('@/components/Skills.vue');
 const Experience = () => import('@/components/Experience.vue');
@@ -22,6 +26,11 @@ export default {
     Experience,
     PersonalProjects,
     Hobby,
+  },
+  computed: {
+    ...mapState([
+      'nameStyle',
+    ]),
   },
 };
 </script>

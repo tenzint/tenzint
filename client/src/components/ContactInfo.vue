@@ -142,19 +142,18 @@
             <v-btn
               :color="counterThemeColorClass"
               fab
-              x-large
               ripple
               v-bind="attrs"
               v-on="on"
-              @click="downloadResumePdf"
+              @click.prevent="downloadResumePdf"
             >
             <v-icon
               :color="themeColorClass"
               x-large
-            >mdi-file-account</v-icon>
+            >mdi-file-account-outline</v-icon>
             </v-btn>
           </template>
-          <span class="font-weight-bold">resume - TBD</span>
+          <span class="font-weight-bold">download resume</span>
         </v-tooltip>
       </v-col>
     </v-row>
@@ -175,17 +174,21 @@ export default {
   methods: {
     downloadResumePdf() {
       const resumeRef = firebase.storage()
-        .ref('resume.pdf');
+        .ref('tenzin_resume.pdf');
       resumeRef.getDownloadURL().then((url) => {
         // `url` is the download URL
-
+        console.log(url);
         // This can be downloaded directly:
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'blob';
-        /*
-        xhr.onload = function (event) {
+        xhr.onload = function () {
           const blob = xhr.response;
-        }; */
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = 'tenzin_resume';
+          link.click();
+          URL.revokeObjectURL(link.href);
+        };
         xhr.open('GET', url);
         xhr.send();
       }).catch((error) => {

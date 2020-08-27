@@ -289,14 +289,6 @@
               :color="skillsChipBodyColor"
             >MySQL
             </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Firebase realtime database
-            </v-chip>
             <br />
             <v-chip
               class="
@@ -314,7 +306,16 @@
                 elevation-4
               "
               :color="skillsChipBodyColor"
-            >Firebase authentication
+            >Firebase
+            </v-chip>
+            {
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >database
             </v-chip>
             <v-chip
               class="
@@ -322,7 +323,7 @@
                 elevation-4
               "
               :color="skillsChipBodyColor"
-            >Firebase hosting
+            >authentication
             </v-chip>
             <v-chip
               class="
@@ -330,8 +331,17 @@
                 elevation-4
               "
               :color="skillsChipBodyColor"
-            >Firebase storage
+            >hosting
             </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
+            >storage
+            </v-chip>
+            }
           </div>
         </v-col>
         <v-col
@@ -484,9 +494,8 @@
               "
               :color="skillsChipBodyColor"
             >tmi.js
-            </v-chip>(twitch messaging interface)
-            <br />
-            (non-NodeJS)
+            </v-chip>
+            +
             <v-chip
               class="
                 ma-1
@@ -495,7 +504,6 @@
               :color="skillsChipBodyColor"
             >twitch API
             </v-chip>
-            (GET challenge + POST subscribe)
             <br />
             <br />
             <v-chip
