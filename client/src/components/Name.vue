@@ -38,7 +38,7 @@
         <transition
           name="fade"
           @after-enter="showName = true"
-          :duration="{ enter: 1000 }"
+          :duration="{ enter: 2000 }"
         >
         <span
           class="
@@ -51,21 +51,23 @@
         >, I'm</span>
         </transition>
         <transition
-          name="fade"
+          name="typing"
           @after-enter="showSchool = true"
-          :duration="{ enter: 4000 }"
+          :duration="{ enter: 5000 }"
         >
-        <h1 class="text-md-h2
-          text-h3
-          font-weight-bold
-          white--text
-          "
-          v-if="showName"
-        >TENZIN THABKHAE</h1>
+          <h1 class="text-md-h2
+            text-h3
+            font-weight-bold
+            white--text
+            "
+            v-if="showName"
+          >
+            TENZIN THABKHAE
+          </h1>
         </transition>
         <transition
           name="fade"
-          :duration="{ enter: 3000 }"
+          :duration="{ enter: 2000 }"
         >
         <h6 class="text-subtitle-2
           text-md-body-1
@@ -83,7 +85,7 @@
     <transition
       name="fade"
       @after-enter="setContainerHeight"
-      :duration="{ enter: 3000 }"
+      :duration="{ enter: 2000 }"
     >
       <ContactInfo
         v-if="showSchool"
@@ -166,6 +168,41 @@ export default {
   }
 
   .fade-appear {
+    opacity: 0;
+  }
+  .typing-enter-active {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #FCE4EC; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation:
+      typing 10s steps(44) 1s 1 normal both,
+      blink-caret .75s steps(30) infinite;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    0% { width: 0 }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid #FCE4EC;
+      width: 100%;
+    }
+    100% {
+      border: none;
+      opacity: 1;
+    }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #FCE4EC; }
+  }
+  .typing-enter, .typing-leave-to {
     opacity: 0;
   }
 </style>
