@@ -45,3 +45,10 @@ Now, the bug is fixed.
 
 * gsutil cors set cors.json gs://tenzint.appspot.com
 -------------------------------------
+
+* If you have staged a sensitive file accidentally and realise so later on. You can unstage it later by following these steps:
+  1. Before proceeding, make sure all your changes are committed, including your .gitignore file.
+  2. Go to the right path in console, go to /client, not the root.
+  3. To clear the repo, `git rm -r --cached .` ... or if you have a specific file to remove, then `git rm -r --cached filename/path.html`
+  4. if you removed everything on step 3, then do `git add .` to re-add everything. Otherwise skip this if you have removed a specific file
+  5. Commit your repo, `git commit -m "git ignore fixed etc"`. Or commit from VSCode, same thing.
