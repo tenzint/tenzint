@@ -7,7 +7,7 @@
       px-4 py-8
     "
     fluid
-    id="bg-img-one"
+    id="hobby-container"
   >
     <v-row
       align="center"
@@ -29,9 +29,11 @@
       :value="hobbyC"
       @input="setHobbyC"
       :options="{
-        threshold: .5
+        rootMargin: '20%',
+        threshold: 1,
       }"
       min-height="100vh"
+      transition='scroll-y-transition'
       v-intersect="onHobbyIntersect"
     >
     <v-row
@@ -190,9 +192,6 @@ export default {
 </script>
 
 <style scoped>
-  #bg-img-one {
-    height: 100%;
-  }
   a, a:link, a:visited {
     color: #33691E;
     text-decoration: underline;

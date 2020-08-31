@@ -52,7 +52,7 @@
         </transition>
         <transition
           name="typing"
-          @after-enter="showSchool = true"
+          @after-enter="afterEnterNameEvent"
           :duration="{ enter: 5000 }"
         >
           <h1 class="text-md-h2
@@ -61,8 +61,7 @@
             white--text
             "
             v-if="showName"
-          >
-            TENZIN THABKHAE
+          >{{ name }}
           </h1>
         </transition>
         <transition
@@ -109,6 +108,7 @@ export default {
       showName: false,
       showSchool: false,
       mainStyle: { minHeight: '80vh' },
+      name: '',
     };
   },
   computed: {
@@ -134,6 +134,10 @@ export default {
     setContainerHeight() {
       this.setNameStyle({ minHeight: '60vh' });
       this.mainStyle = { minHeight: '50vh' };
+    },
+    afterEnterNameEvent() {
+      this.name = 'TENZIN THABKHAE';
+      this.showSchool = true;
     },
   },
 };
@@ -170,37 +174,58 @@ export default {
   .fade-appear {
     opacity: 0;
   }
-  .typing-enter-active {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid #FCE4EC; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+  .typing-enter-active::before {
     animation:
-      typing 10s steps(44) 1s 1 normal both,
-      blink-caret .75s steps(30) infinite;
+      typing 4s linear 0s 1 normal forwards;
+      content: "";
   }
-
   /* The typing effect */
   @keyframes typing {
-    0% { width: 0 }
-    1% {
-      opacity: 1;
+    0% {
+      content: "T";
     }
-    99.9% {
-      border-right: .15em solid #FCE4EC;
-      width: 100%;
+    7.1% {
+      content: "TE";
+    }
+    14.3% {
+      content: "TEN";
+    }
+    21.4% {
+      content: "TENZ";
+    }
+    28.57% {
+      content: "TENZI";
+    }
+    35.7% {
+      content: "TENZIN";
+    }
+    42.86% {
+      content: "TENZIN ";
+    }
+    50% {
+      content: "TENZIN T";
+    }
+    57.14% {
+      content: "TENZIN TH";
+    }
+    64.28% {
+      content: "TENZIN THA";
+    }
+    71.42% {
+      content: "TENZIN THAB";
+    }
+    78.57% {
+      content: "TENZIN THABK";
+    }
+    85.71% {
+      content: "TENZIN THABKH";
+    }
+    92.86% {
+      content: "TENZIN THABKHA";
     }
     100% {
-      border: none;
-      opacity: 1;
+      content: "TENZIN THABKHAE";
     }
-  }
-
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #FCE4EC; }
   }
   .typing-enter, .typing-leave-to {
     opacity: 0;

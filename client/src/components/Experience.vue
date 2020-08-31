@@ -28,9 +28,11 @@
       :value="expC"
       @input="setExpC"
       :options="{
-        threshold: .5
+        rootMargin: '80%',
+        threshold: 1,
       }"
       min-height="100vh"
+      transition='scroll-y-transition'
       v-intersect="onExpIntersect"
     >
     <v-timeline

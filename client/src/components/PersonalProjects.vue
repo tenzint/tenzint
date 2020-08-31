@@ -28,9 +28,11 @@
       :value="ppC"
       @input="setPpC"
       :options="{
-        threshold: .5
+        rootMargin: '80%',
+        threshold: 1,
       }"
       min-height="100vh"
+      transition='scroll-y-transition'
       v-intersect="onPPIntersect"
     >
     <v-container>

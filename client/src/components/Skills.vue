@@ -6,6 +6,7 @@
       black--text
       px-4 py-8
     "
+    id="skills-container"
     fluid
   >
     <v-row
@@ -28,9 +29,11 @@
       :value="skillsC"
       @value="setSkillsC"
       :options="{
-        threshold: .5
+        rootMargin: '80%',
+        threshold: 1,
       }"
       min-height="100vh"
+      transition='scroll-y-transition'
       v-intersect="onSkillsIntersect"
     >
       <v-row
