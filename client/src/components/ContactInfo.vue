@@ -176,8 +176,6 @@ export default {
       const resumeRef = firebase.storage()
         .ref('tenzin_resume.pdf');
       resumeRef.getDownloadURL().then((url) => {
-        // `url` is the download URL
-        console.log(url);
         // This can be downloaded directly:
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'blob';
