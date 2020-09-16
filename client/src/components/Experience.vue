@@ -247,10 +247,12 @@ export default {
         entries[0]
           .isIntersecting,
       );
+      /*
       this.setExpC(
         entries[0]
           .isIntersecting,
       );
+      */
     },
   },
 };

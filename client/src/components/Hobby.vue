@@ -33,7 +33,7 @@
         threshold: 1,
       }"
       min-height="100vh"
-      transition='scroll-y-transition'
+      transition='slide-y-reverse-transition'
       v-intersect="onHobbyIntersect"
     >
     <v-row

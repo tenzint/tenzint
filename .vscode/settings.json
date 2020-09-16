@@ -3,9 +3,9 @@
   "vetur.format.defaultFormatter.js": "prettier",
   "vetur.format.defaultFormatterOptions": {
     "prettier": {
-      "semi": false,
       "tabWidth": 2,
-      "printWidth": 100
+      "printWidth": 100,
+      "singleQuote": true
     }
   },
 }

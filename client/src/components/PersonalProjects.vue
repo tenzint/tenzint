@@ -49,8 +49,8 @@
             </h4>
             <ul class="text-body-2 text-md-body-1 mx-4">
               <li>
-                Developed an Express.js server to scrapes TTC transit data and
-                packages a JSON-readable data from XML for client
+                Developed an Express.js server that scrapes TTC transit data and
+                packages a JSON-readable data from XML for front-end client
               </li>
               <li>
                 <span class="text-decoration-underline">Utilized:</span>
@@ -190,7 +190,7 @@ export default {
     ...mapMutations(['setPpC', 'setPpAc']),
     onPPIntersect(entries) {
       this.setPpAc(entries[0].isIntersecting);
-      this.setPpC(entries[0].isIntersecting);
+      // this.setPpC(entries[0].isIntersecting);
     },
   },
 };
