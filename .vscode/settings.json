@@ -1,11 +1,11 @@
 {
-  "vue3snippets.enable-compile-vue-file-on-did-save-code": true,
+  "vue3snippets.enable-compile-vue-file-on-did-save-code": false,
   "vetur.format.defaultFormatter.js": "prettier",
   "vetur.format.defaultFormatterOptions": {
     "prettier": {
       "semi": false,
-      "tabWidth": 2, // works
-      "printWidth": 100 // does not work
+      "tabWidth": 2,
+      "printWidth": 100
     }
   },
 }
