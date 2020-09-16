@@ -54,7 +54,8 @@
               </li>
               <li>
                 <span class="text-decoration-underline">Utilized:</span>
-                Express.js, Mongoose, jsonwebtoken (JWT), bcryptjs, got, Official TTC API via nextbus.com
+                Express.js, Mongoose, jsonwebtoken (JWT), bcryptjs, got,
+                Official TTC API via nextbus.com
               </li>
             </ul>
           </v-col>
@@ -119,7 +120,8 @@
               <li>
                 Created a discord bot that allows users to send commands and serves
                 the users via plain texts,
-                MessageEmbeds, images, videos, links or audio by using the Node.js package Discord.js
+                MessageEmbeds, images, videos, links or audio by
+                using the Node.js package Discord.js
               </li>
               <li>
                 Developed a way to notify discord users when a twitch user becomes online or
@@ -178,20 +180,20 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex"
+import { mapState, mapMutations } from 'vuex';
 
 export default {
   computed: {
-    ...mapState(["themeColorText", "counterThemeColorClass", "ppC", "ppAc"]),
+    ...mapState(['themeColorText', 'counterThemeColorClass', 'ppC', 'ppAc']),
   },
   methods: {
-    ...mapMutations(["setPpC", "setPpAc"]),
+    ...mapMutations(['setPpC', 'setPpAc']),
     onPPIntersect(entries) {
-      this.setPpAc(entries[0].isIntersecting)
-      this.setPpC(entries[0].isIntersecting)
+      this.setPpAc(entries[0].isIntersecting);
+      this.setPpC(entries[0].isIntersecting);
     },
   },
-}
+};
 </script>
 
 <style scoped>
