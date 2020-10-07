@@ -3,7 +3,9 @@
 This project is the personal website of Tenzin Thabkhae.
 
 ###### Links
+
 https://tenzint.web.app
+
 https://tenzint.github.io
 
 Steps taken/problems faced while making this website.
