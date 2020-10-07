@@ -49,13 +49,17 @@
             </h4>
             <ul class="text-body-2 text-md-body-1 mx-4">
               <li>
-                Developed an Express.js server that scrapes TTC transit data and
-                packages a JSON-readable data from XML for front-end client
+                Developed a RESTful Express.js server that scrapes TTC transit
+                XML data and transforms it into readable JSON
+              </li>
+              <li>
+                Developed a decent frontend UI and UX using Nuxt.js modules
               </li>
               <li>
                 <span class="text-decoration-underline">Utilized:</span>
-                Express.js, Mongoose, jsonwebtoken (JWT), bcryptjs, got,
-                Official TTC API via nextbus.com
+                Full-stack, REST Api, Vue.js (+ Nuxt.js), Express.js,
+                Mongoose, jsonwebtoken (JWT), bcryptjs, got,
+                web-scraping official TTC API
               </li>
             </ul>
           </v-col>

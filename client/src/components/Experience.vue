@@ -24,7 +24,7 @@
             ${themeColorText}
             font-italic
             text-caption
-          `" slot="opposite">Nov 2019-Present (March 2020)</span>
+          `" slot="opposite">Nov 2019-Present (restarted Sept 23, 2020)</span>
         <v-card :color="themeColorClass" :class="counterThemeColorText">
           <v-card-title class="title">
             Web Development Volunteer, Toronto Grace Health Centre
@@ -37,15 +37,17 @@
                 ${themeColorText}
                 font-italic
                 text-caption
-              `" v-if="$vuetify.breakpoint.smAndDown">Nov 2019-Present (March 2020)</span>
+              `" v-if="$vuetify.breakpoint.smAndDown">
+              Nov 2019-Present (restarted Sept 23, 2020)</span>
             <ul class="text-body-2 text-md-body-1 mx-4 black--text">
               <li>
                 Developed a full-stack prototype of ticketing system using
                 Vue.js and Adonis.js for use between nurses and maintenance staff
               </li>
               <li>
-                Developed an automation to web scrape, download and print
-                PDF files from intranet by using Selenium and chokidar
+                Developed a full-stack web app with automation to web scrape,
+                download and print PDF files from intranet by using
+                Selenium and chokidar
               </li>
               <li>
                 Tested and debugged backend API functionalities
@@ -62,8 +64,8 @@
               </li>
               <li>
                 <span class="text-decoration-underline">Utilized:</span>
-                Vue.js, Adonis.js, html5, css3,
-                Selenium, git, MySQL, MongoDB, moment.js, chokidar, node-schedule
+                Full-stack web development, RESTful API, Vue.js (+Nuxt.js), Adonis.js, html5, css3,
+                Selenium, git, MySQL, MongoDB (Mongoose), moment.js, chokidar, node-schedule
               </li>
             </ul>
           </v-card-text>
