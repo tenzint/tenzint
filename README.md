@@ -1,11 +1,13 @@
-*to be edited*
+# Main project
 
 This project is the personal website of Tenzin Thabkhae.
 
+###### Links
 https://tenzint.web.app
-
+https://tenzint.github.io
 
 Steps taken/problems faced while making this website.
+-----------------------------------------------
 
 * I had old version of NodeJS (8.x.x), so I downloaded the LTS version (v12.18.3 at the time)
 * I installed and set up firebase first for web hosting purposes but `firebase init` causes an error, which is understandable since I don't have a skeleton for web app yet.
@@ -44,6 +46,7 @@ Also, made a simple animation (actually, nested transitions) on the first page. 
 Now, the bug is fixed.
 
 * gsutil cors set cors.json gs://tenzint.appspot.com
+
 -------------------------------------
 
 * If you have staged a sensitive file accidentally and realise so later on. You can unstage it later by following these steps:
