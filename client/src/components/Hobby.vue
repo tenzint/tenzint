@@ -50,6 +50,7 @@
             :background-color="counterThemeColorClass"
             :color="themeColorClass"
             grow
+            @change="resetTab"
           >
             <v-tabs-slider></v-tabs-slider>
             <v-tab
@@ -178,9 +179,6 @@ export default {
       } else {
         this.viewChess = ChessMore;
       }
-      if (!this.tabletennisSummary) {
-        this.viewTableTennis = TableTennisLess;
-      }
     },
     toggleTableTennis() {
       this.tabletennisSummary = !this.tabletennisSummary;
@@ -189,10 +187,13 @@ export default {
       } else {
         this.viewTableTennis = TableTennisMore;
       }
-      if (!this.chessSummary) {
-        this.viewChess = ChessLess;
-      }
     },
+    resetTab() {
+      this.chessSummary = true;
+      this.tabletennisSummary = true;
+      this.viewChess =  ChessLess;
+      this.viewTableTennis = TableTennisLess;
+    }
   },
 };
 </script>
