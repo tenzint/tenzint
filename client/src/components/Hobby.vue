@@ -191,9 +191,9 @@ export default {
     resetTab() {
       this.chessSummary = true;
       this.tabletennisSummary = true;
-      this.viewChess =  ChessLess;
+      this.viewChess = ChessLess;
       this.viewTableTennis = TableTennisLess;
-    }
+    },
   },
 };
 </script>
