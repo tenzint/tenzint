@@ -531,6 +531,14 @@
                 elevation-4
               "
               :color="skillsChipBodyColor"
+            >Full-stack
+            </v-chip>
+            <v-chip
+              class="
+                ma-1
+                elevation-4
+              "
+              :color="skillsChipBodyColor"
             >OOP
             </v-chip>
             <v-chip

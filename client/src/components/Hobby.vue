@@ -178,6 +178,9 @@ export default {
       } else {
         this.viewChess = ChessMore;
       }
+      if (!this.tabletennisSummary) {
+        this.viewTableTennis = TableTennisLess;
+      }
     },
     toggleTableTennis() {
       this.tabletennisSummary = !this.tabletennisSummary;
@@ -185,6 +188,9 @@ export default {
         this.viewTableTennis = TableTennisLess;
       } else {
         this.viewTableTennis = TableTennisMore;
+      }
+      if (!this.chessSummary) {
+        this.viewChess = ChessLess;
       }
     },
   },
