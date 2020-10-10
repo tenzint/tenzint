@@ -26,6 +26,8 @@ export default new Vuex.Store({
     hobbyAc: false,
     // style object for Name.vue component
     nameStyle: { minHeight: '100vh' },
+    // layout drawer
+    drawer: false,
   },
   mutations: {
     setNameC(state, val) {
@@ -60,6 +62,9 @@ export default new Vuex.Store({
     },
     setNameStyle(state, styleArray) {
       state.nameStyle = styleArray;
+    },
+    setDrawer(state, value) {
+      state.drawer = value;
     },
   },
   actions: {

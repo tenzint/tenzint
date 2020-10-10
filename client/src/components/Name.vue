@@ -124,6 +124,7 @@ export default {
       'setNameC',
       'setNameAc',
       'setNameStyle',
+      'setDrawer',
     ]),
     onNameIntersect(entries) {
       this.setNameC(entries[0].nameC);
@@ -134,6 +135,7 @@ export default {
     setContainerHeight() {
       this.setNameStyle({ minHeight: '60vh' });
       this.mainStyle = { minHeight: '50vh' };
+      this.setDrawer(true);
     },
     afterEnterNameEvent() {
       this.name = 'TENZIN THABKHAE';

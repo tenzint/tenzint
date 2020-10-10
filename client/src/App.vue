@@ -2,15 +2,12 @@
   <v-app>
     <v-app-bar
       app
-      clipped-left
       :color="themeColorClass"
       dark
       hide-on-scroll
       :value="false"
     >
-      <v-spacer></v-spacer>
       <v-snackbar
-        value="true"
         timeout="6000"
         dark
         top
@@ -45,6 +42,7 @@
       <v-tooltip
         left
         transition="slide-x-reverse-transition"
+        v-if="$vuetify.breakpoint.smAndDown"
       >
         <template v-slot:activator="{ on, attrs }">
           <v-app-bar-nav-icon
@@ -60,10 +58,15 @@
     </v-app-bar>
     <v-navigation-drawer
       app
+      disable-route-watcher
       v-model="drawer"
+      expand-on-hover
+      floating
       :color="themeColorClass"
+      :overlay-color="themeColorClass"
+      overlay-opacity=".8"
     >
-      <v-list ripple>
+      <v-list ripple nav>
         <v-list-item
           ripple
         >
@@ -243,7 +246,6 @@ export default {
   name: 'App',
 
   data: () => ({
-    drawer: false,
   }),
   computed: {
     ...mapState([
@@ -257,6 +259,14 @@ export default {
       'ppAc',
       'hobbyAc',
     ]),
+    drawer: {
+      get() {
+        return this.$store.state.drawer;
+      },
+      set(value) {
+        this.$store.commit('setDrawer', value);
+      },
+    },
   },
   methods: {
     closeConditional() {
