@@ -62,6 +62,7 @@
       v-model="drawer"
       expand-on-hover
       floating
+      mini-variant-width="53"
       :color="themeColorClass"
       :overlay-color="themeColorClass"
       overlay-opacity=".8"
