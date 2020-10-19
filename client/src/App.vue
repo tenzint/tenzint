@@ -4,8 +4,8 @@
       app
       :color="themeColorClass"
       dark
-      hide-on-scroll
-      :value="false"
+      :hide-on-scroll="$vuetify.breakpoint.smAndDown"
+      :value="$vuetify.breakpoint.smAndDown"
     >
       <v-snackbar
         timeout="6000"
@@ -42,7 +42,7 @@
       <v-tooltip
         left
         transition="slide-x-reverse-transition"
-        v-if="$vuetify.breakpoint.smAndDown"
+        v-if="$vuetify.breakpoint.mdAndDown"
       >
         <template v-slot:activator="{ on, attrs }">
           <v-app-bar-nav-icon
@@ -66,6 +66,7 @@
       :color="themeColorClass"
       :overlay-color="themeColorClass"
       overlay-opacity=".8"
+      :permanent="$vuetify.breakpoint.mdAndUp"
     >
       <v-list ripple nav>
         <v-list-item
@@ -267,11 +268,6 @@ export default {
       set(value) {
         this.$store.commit('setDrawer', value);
       },
-    },
-  },
-  methods: {
-    closeConditional() {
-      return this.drawer;
     },
   },
 };
