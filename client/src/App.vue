@@ -66,7 +66,7 @@
       :color="themeColorClass"
       :overlay-color="themeColorClass"
       overlay-opacity=".8"
-      :permanent="$vuetify.breakpoint.mdAndUp"
+      :permanent="$vuetify.breakpoint.mdAndUp && activateDrawer"
     >
       <v-list ripple nav>
         <v-list-item
@@ -260,6 +260,7 @@ export default {
       'expAc',
       'ppAc',
       'hobbyAc',
+      'activateDrawer',
     ]),
     drawer: {
       get() {
