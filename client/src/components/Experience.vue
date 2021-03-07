@@ -178,7 +178,7 @@
       <v-timeline-item large fill-dot :color="themeColorClass">
         <template v-slot:icon>
           <v-avatar>
-            <img src="https://tenzint.github.io/sa-logo" />
+            <img src="https://tenzint.github.io/tccc-logo" />
           </v-avatar>
         </template>
         <span :class="`
