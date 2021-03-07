@@ -17,7 +17,7 @@
       <v-timeline-item large fill-dot :color="themeColorClass">
         <template v-slot:icon>
           <v-avatar>
-            <img src="https://salvationarmy.ca/wp-content/uploads/2017/10/cropped-site-icon-512.png" />
+            <img src="https://tenzint.github.io/sa-logo.png" />
           </v-avatar>
         </template>
         <span :class="`
@@ -74,7 +74,7 @@
       <v-timeline-item large fill-dot :color="themeColorClass">
         <template v-slot:icon>
           <v-avatar>
-            <img src="https://zhuoyuelyu.github.io/index_files/1.png" />
+            <img src="https://tenzint.github.io/uoft.png" />
           </v-avatar>
         </template>
         <span :class="`
@@ -129,7 +129,7 @@
       <v-timeline-item large fill-dot :color="themeColorClass">
         <template v-slot:icon>
           <v-avatar>
-            <img src="https://zhuoyuelyu.github.io/index_files/1.png" />
+            <img src="https://tenzint.github.io/uoft.png" />
           </v-avatar>
         </template>
         <span :class="`
@@ -178,7 +178,7 @@
       <v-timeline-item large fill-dot :color="themeColorClass">
         <template v-slot:icon>
           <v-avatar>
-            <img src="https://www.tcccgc.org/wp-content/uploads/2016/04/logo.png" />
+            <img src="https://tenzint.github.io/sa-logo" />
           </v-avatar>
         </template>
         <span :class="`
