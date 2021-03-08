@@ -20,5 +20,10 @@ npm run build
 npm run lint --fix
 ```
 
+### For production and deploying to github; on "/client"
+```
+./deploy.sh
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
