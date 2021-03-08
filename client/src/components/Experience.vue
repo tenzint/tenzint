@@ -1,6 +1,6 @@
 <template>
 <v-container class="grey lighten-4 px-4 py-8" fluid>
-  <v-row align="center" justify="center">
+  <v-row align="center" justify="center" class="my-8">
     <v-col class="text-center">
       <h1 :class="`
             text-h4

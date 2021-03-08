@@ -5,7 +5,7 @@
       px-4
       py-8
     `" fluid>
-    <v-row align="center" justify="center">
+    <v-row align="center" justify="center" class="my-8">
       <v-col class="text-center">
         <h1
           :class="`
@@ -33,20 +33,25 @@
           <v-col cols="10" md="8" class="elevation-15 pa-4">
             <h4
               :class="`
-            text-heading-5
-            text-md-heading-4
-            font-weight-bold
-            pt-4
-            ${themeColorText}
-          `"
+                text-heading-5
+                text-md-heading-4
+                font-weight-bold
+                pt-4
+                text-center
+                ${themeColorText}
+              `"
             >
               Tenzin Hub - Weather and TTC transit
-              (
+            </h4>
+            <v-row justify="center" class="my-16">
               <a
                 href="https://github.com/tenzint/tenzinhub"
                 target="_blank"
-              >Github Repo link</a>)
-            </h4>
+                class="aimg"
+              >
+                <v-img width="40vw" src="/projects/tenzinhub-ttc.png" contain />
+              </a>
+            </v-row>
             <ul class="text-body-2 text-md-body-1 mx-4">
               <li>
                 Developed a RESTful Express.js server that scrapes TTC transit
@@ -68,20 +73,25 @@
           <v-col cols="10" md="8" class="elevation-15 pa-4">
             <h4
               :class="`
-            text-heading-5
-            text-md-heading-4
-            font-weight-bold
-            pt-4
-            ${themeColorText}
-          `"
+                text-heading-5
+                text-md-heading-4
+                font-weight-bold
+                pt-4
+                text-center
+                ${themeColorText}
+              `"
             >
               Journal Website
-              (
+            </h4>
+            <v-row justify="center" class="my-16">
               <a
                 href="https://tenzinandhobbes.web.app"
                 target="_blank"
-              >https://tenzinandhobbes.web.app</a>)
-            </h4>
+                class="aimg"
+              >
+                <v-img width="40vw" src="/projects/tenzinandhobbes.png" contain />
+              </a>
+            </v-row>
             <ul class="text-body-2 text-md-body-1 mx-4">
               <li>
                 Developed a web app using Vue.js that
@@ -113,12 +123,13 @@
           <v-col cols="10" md="8" class="elevation-15 pa-4">
             <h4
               :class="`
-            text-heading-5
-            text-md-heading-4
-            font-weight-bold
-            pt-4
-            ${themeColorText}
-          `"
+                text-heading-5
+                text-md-heading-4
+                font-weight-bold
+                pt-4
+                text-center
+                ${themeColorText}
+              `"
             >Discord.js mini-projects</h4>
             <ul class="text-body-2 text-md-body-1 mx-4">
               <li>
@@ -213,5 +224,12 @@ a:hover {
   text-decoration: underline;
   font-weight: bold;
   font-size: 20px;
+}
+.aimg {
+  transition: all .3s ease-in-out;
+}
+.aimg:hover {
+  transform: scale(1.2);
+  display: block;
 }
 </style>

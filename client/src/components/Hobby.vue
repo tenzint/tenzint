@@ -11,7 +11,9 @@
   >
     <v-row
       align="center"
-      justify="center">
+      justify="center"
+      class="my-8"
+    >
       <v-col
         class="text-center"
       >
