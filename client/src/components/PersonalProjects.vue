@@ -49,7 +49,7 @@
                 target="_blank"
                 class="aimg"
               >
-                <v-img width="40vw" src="/projects/tenzinhub-ttc.png" contain />
+                <v-img width="40vw" src="https://tenzint.github.io/projects/tenzinhub-ttc.png" contain />
               </a>
             </v-row>
             <ul class="text-body-2 text-md-body-1 mx-4">
@@ -89,7 +89,7 @@
                 target="_blank"
                 class="aimg"
               >
-                <v-img width="40vw" src="/projects/tenzinandhobbes.png" contain />
+                <v-img width="40vw" src="https://tenzint.github.io/projects/tenzinandhobbes.png" contain />
               </a>
             </v-row>
             <ul class="text-body-2 text-md-body-1 mx-4">

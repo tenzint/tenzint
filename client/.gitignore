@@ -6,6 +6,7 @@ fbConfig.json
 public/google0bda2bf50154fefe.html
 # firebase files
 /.firebase
+firebase-debug.log
 
 # local env files
 .env.local
