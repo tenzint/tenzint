@@ -53,7 +53,7 @@
         <transition
           name="typing"
           @after-enter="afterEnterNameEvent"
-          :duration="{ enter: 2000 }"
+          :duration="{ enter: 3000 }"
         >
           <h1 class="text-md-h2
             text-h3
@@ -186,7 +186,7 @@ export default {
     0% {
       content: "TENZIN";
     }
-    100% {
+    90% {
       content: "TENZIN THABKHAE";
     }
   }
