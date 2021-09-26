@@ -1,8 +1,8 @@
 <template>
   <v-container
     class="
-      grey
-      lighten-4
+      deep-orange
+      lighten-5
       black--text
       px-4 py-8
     "
@@ -24,7 +24,7 @@
             ${themeColorText}
           `"
           id="nav-hobby"
-        >Hobbies</h1>
+        >HOBBIES</h1>
       </v-col>
     </v-row>
     <v-lazy

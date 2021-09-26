@@ -1,12 +1,12 @@
 <template>
-<v-container class="grey lighten-4 px-4 py-8" fluid>
+<v-container class="light-green lighten-5 px-4 py-8" fluid>
   <v-row align="center" justify="center" class="my-8">
     <v-col class="text-center">
       <h1 :class="`
             text-h4
             text-md-h3
             ${themeColorText}
-          `" id="nav-experience">Relevant Experience</h1>
+          `" id="nav-experience">EXPERIENCE</h1>
     </v-col>
   </v-row>
   <v-lazy :value="expC" @input="setExpC" :options="{
@@ -27,7 +27,7 @@
           `" slot="opposite">Nov 2019-Present (restarted Sept 23, 2020)</span>
         <v-card :color="themeColorClass" :class="counterThemeColorText">
           <v-card-title class="title">
-            Web Development Volunteer, Toronto Grace Health Centre
+            Full-stack Developer, Toronto Grace Health Centre
           </v-card-title>
           <v-card-text :class="`
               py-4
@@ -83,7 +83,9 @@
             text-caption
           `" slot="opposite">Spring 2018</span>
         <v-card :color="themeColorClass" :class="counterThemeColorText">
-          <v-card-title class="title">Team member, ECE496 Capstone Project, UofT</v-card-title>
+          <v-card-title class="title">
+            Front-end Developer, ECE496 Capstone Project, UofT
+            </v-card-title>
           <v-card-text :class="`
               ${counterThemeColorClass}
               black--text
@@ -138,7 +140,9 @@
             text-caption
           `" slot="opposite">Fall 2017</span>
         <v-card :color="themeColorClass" :class="counterThemeColorText">
-          <v-card-title class="title">Team member, Software Engineering Project, UofT</v-card-title>
+          <v-card-title class="title">
+            Full-stack Developer, Software Engineering Project, UofT
+            </v-card-title>
           <v-card-text :class="`
               ${counterThemeColorClass}
               black--text
@@ -188,7 +192,7 @@
           `" slot="opposite">2015</span>
         <v-card :color="themeColorClass" :class="counterThemeColorText">
           <v-card-title class="title">
-            Membership Portal Developer Volunteer, Tibetan
+            Membership Portal Developer, Tibetan
             Canadian Cultural Center
           </v-card-title>
           <v-card-text :class="`

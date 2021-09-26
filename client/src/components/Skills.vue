@@ -1,7 +1,7 @@
 <template>
   <v-container
     class="
-      grey
+      orange
       lighten-5
       black--text
       px-4 py-8
@@ -24,7 +24,7 @@
             ${themeColorText}
           `"
           id="nav-skills"
-        >Skills At a Glance</h1>
+        >SKILLS AT A GLANCE</h1>
       </v-col>
     </v-row>
     <v-lazy

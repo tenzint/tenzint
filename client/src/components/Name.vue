@@ -53,7 +53,7 @@
         <transition
           name="typing"
           @after-enter="afterEnterNameEvent"
-          :duration="{ enter: 5000 }"
+          :duration="{ enter: 2000 }"
         >
           <h1 class="text-md-h2
             text-h3
@@ -184,46 +184,7 @@ export default {
   /* The typing effect */
   @keyframes typing {
     0% {
-      content: "T";
-    }
-    7.1% {
-      content: "TE";
-    }
-    14.3% {
-      content: "TEN";
-    }
-    21.4% {
-      content: "TENZ";
-    }
-    28.57% {
-      content: "TENZI";
-    }
-    35.7% {
       content: "TENZIN";
-    }
-    42.86% {
-      content: "TENZIN ";
-    }
-    50% {
-      content: "TENZIN T";
-    }
-    57.14% {
-      content: "TENZIN TH";
-    }
-    64.28% {
-      content: "TENZIN THA";
-    }
-    71.42% {
-      content: "TENZIN THAB";
-    }
-    78.57% {
-      content: "TENZIN THABK";
-    }
-    85.71% {
-      content: "TENZIN THABKH";
-    }
-    92.86% {
-      content: "TENZIN THABKHA";
     }
     100% {
       content: "TENZIN THABKHAE";

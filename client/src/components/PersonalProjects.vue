@@ -1,6 +1,6 @@
 <template>
   <v-container :class="`
-      grey lighten-5
+      amber lighten-5
       black--text
       px-4
       py-8
@@ -14,7 +14,7 @@
             ${themeColorText}
           `"
           id="nav-projects"
-        >Personal Projects</h1>
+        >PROJECTS</h1>
       </v-col>
     </v-row>
     <v-lazy
