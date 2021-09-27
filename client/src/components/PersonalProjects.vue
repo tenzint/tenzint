@@ -34,8 +34,8 @@
       v-intersect="onPPIntersect"
     >
       <v-container>
-        <v-row class="mx-4" justify="center">
-          <v-col cols="10" md="8" class="elevation-15 pa-4">
+        <v-row class="mb-4" justify="center">
+          <v-col cols="12" md="8" class="elevation-15 pa-4">
             <h4
               :class="`
                 text-heading-5
@@ -71,8 +71,8 @@
             </ul>
           </v-col>
         </v-row>
-        <v-row class="mx-4" justify="center">
-          <v-col cols="10" md="8" class="elevation-15 pa-4">
+        <v-row class="my-4" justify="center">
+          <v-col cols="12" md="8" class="elevation-15 pa-4">
             <h4
               :class="`
                 text-heading-5
@@ -120,8 +120,8 @@
             </ul>
           </v-col>
         </v-row>
-        <v-row class="mx-4" justify="center">
-          <v-col cols="10" md="8" class="elevation-15 pa-4">
+        <v-row class="my-4" justify="center">
+          <v-col cols="12" md="8" class="elevation-15 pa-4">
             <h4
               :class="`
                 text-heading-5

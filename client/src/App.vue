@@ -122,7 +122,7 @@
           color="white"
         >
           <v-list-item-action>
-            <v-icon :class="counterThemeColorText">mdi-file-cog</v-icon>
+            <v-icon :class="counterThemeColorText">mdi-equalizer</v-icon>
           </v-list-item-action>
           <v-list-item-content :class="counterThemeColorText"> Skills </v-list-item-content>
         </v-list-item>
@@ -138,10 +138,10 @@
           color="white"
         >
           <v-list-item-action>
-            <v-icon :class="counterThemeColorText">mdi-thumb-up</v-icon>
+            <v-icon :class="counterThemeColorText">mdi-trending-up</v-icon>
           </v-list-item-action>
           <v-list-item-content :class="counterThemeColorText">
-            Relevant Experience
+            Experience
           </v-list-item-content>
         </v-list-item>
         <v-list-item
@@ -159,7 +159,7 @@
             <v-icon :class="counterThemeColorText">mdi-wrench</v-icon>
           </v-list-item-action>
           <v-list-item-content :class="counterThemeColorText">
-            Personal Projects
+            Projects
           </v-list-item-content>
         </v-list-item>
         <v-list-item

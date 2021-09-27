@@ -12,6 +12,8 @@ export default new Vuex.Store({
     counterThemeColorClass: "pink lighten-5",
     skillsChipTitleColor: "grey lighten-3",
     skillsChipBodyColor: "grey lighten-2",
+    skillsArray: [],
+    qualArray: [],
     // lazy loading states below
     nameC: true,
     skillsC: false,
@@ -70,7 +72,109 @@ export default new Vuex.Store({
     setActivateDrawer(state, value) {
       state.activateDrawer = value;
     },
+    resetSkillsArray(state) {
+      state.skillsArray = [];
+    },
+    appendSkillsArray(state, sObj) {
+      state.skillsArray.push(sObj);
+    },
+    resetQualArray(state) {
+      state.qualArray = [];
+    },
+    appendQualArray(state, sObj) {
+      state.qualArray.push(sObj);
+    },
   },
-  actions: {},
+  actions: {
+    initSkillsArray({ commit }) {
+      commit("resetSkillsArray");
+      commit("resetQualArray");
+
+      // ----- Instantiating skills array (software skill ratings) -------
+      commit("appendSkillsArray", {
+        mdi: "mdi-language-html5",
+        name: "HTML",
+        key: "html",
+        value: 4,
+      });
+      commit("appendSkillsArray", {
+        mdi: "mdi-language-css3",
+        name: "CSS",
+        key: "css",
+        value: 4,
+      });
+      commit("appendSkillsArray", {
+        mdi: "mdi-vuetify",
+        name: "Vue.js",
+        key: "vue",
+        value: 4.5,
+        hint: "Vue Router, VueX store, Vuetify",
+      });
+      commit("appendSkillsArray", {
+        mdi: "mdi-nodejs",
+        name: "Node.js",
+        key: "node",
+        value: 4.5,
+      });
+      commit("appendSkillsArray", {
+        mdi: "mdi-nodejs",
+        name: "Express.js",
+        key: "express",
+        value: 4,
+      });
+      commit("appendSkillsArray", {
+        mdi: "mdi-git",
+        name: "Git",
+        key: "git",
+        value: 5,
+        divide: true,
+      });
+      commit("appendSkillsArray", {
+        mdi: "mdi-database-search",
+        name: "SQL",
+        key: "sql",
+        value: 3.5,
+        hint: "MySQL, PostGre, SQLite2, ORM",
+      });
+      commit("appendSkillsArray", {
+        mdi: "mdi-leaf",
+        name: "MongoDB",
+        key: "mongodb",
+        value: 3.5,
+        divide: true,
+      });
+      commit("appendSkillsArray", {
+        mdi: "mdi-firebase",
+        name: "Firebase",
+        key: "firebase",
+        value: 5,
+        hint: "Real-time database, authentication, hosting, storage",
+      });
+
+      // ----------------------- instantiating qualities ratings ---------------------------------------
+
+      commit("appendQualArray", {
+        mdi: "mdi-rotate-right",
+        name: "Agile",
+        key: "agile",
+        value: 4,
+        hint: "Agile Development model"
+      });
+      commit("appendQualArray", {
+        mdi: "mdi-desktop-classic",
+        name: "OOP",
+        key: "oop",
+        value: 4,
+        hint: "Object-oriented programming"
+      });
+      commit("appendQualArray", {
+        mdi: "mdi-dna",
+        name: "REST",
+        key: "rest",
+        value: 4,
+        hint: "Representational State Transfer concept"
+      });
+    },
+  },
   modules: {},
 });
