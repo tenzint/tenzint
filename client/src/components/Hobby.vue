@@ -1,22 +1,7 @@
 <template>
-  <v-container
-    class="
-      deep-orange
-      lighten-5
-      black--text
-      px-4 py-8
-    "
-    fluid
-    id="hobby-container"
-  >
-    <v-row
-      align="center"
-      justify="center"
-      class="my-8"
-    >
-      <v-col
-        class="text-center"
-      >
+  <v-container class="deep-orange lighten-5 black--text px-4 py-8" fluid id="hobby-container">
+    <v-row align="center" justify="center" class="my-8">
+      <v-col class="text-center">
         <h1
           :class="`
             text-h4
@@ -24,7 +9,9 @@
             ${themeColorText}
           `"
           id="nav-hobby"
-        >HOBBIES</h1>
+        >
+          HOBBIES
+        </h1>
       </v-col>
     </v-row>
     <v-lazy
@@ -35,110 +22,84 @@
         threshold: 1,
       }"
       min-height="100vh"
-      transition='slide-y-reverse-transition'
+      transition="slide-y-reverse-transition"
       v-intersect="onHobbyIntersect"
     >
-    <v-row
-      justify="center"
-    >
-      <v-col
-        cols="10"
-        md="8"
-      >
-        <v-card
-          class="elevation-20">
-          <v-tabs
-            v-model="tab"
-            :background-color="counterThemeColorClass"
-            :color="themeColorClass"
-            grow
-            @change="resetTab"
-          >
-            <v-tabs-slider></v-tabs-slider>
-            <v-tab
-              key="table-tennis"
+      <v-row justify="center">
+        <v-col cols="10" md="8">
+          <v-card class="elevation-20">
+            <v-tabs
+              v-model="tab"
+              :background-color="counterThemeColorClass"
+              :color="themeColorClass"
+              grow
+              @change="resetTab"
             >
-              <v-icon left>mdi-table-tennis</v-icon>
-              Table Tennis
-            </v-tab>
-            <v-tab
-              key="chess"
-            >
-              <v-icon left>mdi-chess-queen</v-icon>
-              Chess
-            </v-tab>
-          </v-tabs>
+              <v-tabs-slider></v-tabs-slider>
+              <v-tab key="table-tennis">
+                <v-icon left>mdi-table-tennis</v-icon>
+                Table Tennis
+              </v-tab>
+              <v-tab key="chess">
+                <v-icon left>mdi-chess-queen</v-icon>
+                Chess
+              </v-tab>
+            </v-tabs>
 
-          <v-tabs-items
-            v-model="tab"
-          >
-            <v-tab-item
-              key="table-tennis"
-            >
-              <v-card flat>
-                <v-card-text
-                  :class="`
+            <v-tabs-items v-model="tab">
+              <v-tab-item key="table-tennis">
+                <v-card flat>
+                  <v-card-text
+                    :class="`
                     ${counterThemeColorClass}
                     grey--text text--darken-4
                   `"
-                >
-                  <transition name="fade" mode="out-in">
-                    <component
-                      :is="viewTableTennis"
-                    ></component>
-                  </transition>
-                  <v-btn
-                    :color="themeColorText"
-                    @click="toggleTableTennis"
                   >
-                    <span v-if="tabletennisSummary">More </span>
-                    <span v-if="!tabletennisSummary">Less </span>
-                    -details...
-                  </v-btn>
-                </v-card-text>
-              </v-card>
-            </v-tab-item>
-            <v-tab-item
-              key="chess"
-            >
-              <v-card flat>
-                <v-card-text
-                  :class="`
+                    <transition name="fade" mode="out-in">
+                      <component :is="viewTableTennis"></component>
+                    </transition>
+                    <v-btn :color="themeColorText" @click="toggleTableTennis">
+                      <span v-if="tabletennisSummary">More </span>
+                      <span v-if="!tabletennisSummary">Less </span>
+                      -details...
+                    </v-btn>
+                  </v-card-text>
+                </v-card>
+              </v-tab-item>
+              <v-tab-item key="chess">
+                <v-card flat>
+                  <v-card-text
+                    :class="`
                     ${counterThemeColorClass}
                     grey--text text--darken-4
                   `"
-                >
-                  <transition name="fade" mode="out-in">
-                    <component
-                      :is="viewChess"
-                    ></component>
-                  </transition>
-                  <v-btn
-                    :color="themeColorText"
-                    @click="toggleChess"
-                  ><span v-if="chessSummary">
-                  More </span>
-                  <span v-else>Less </span>
-                  -details...
-                  </v-btn>
-                </v-card-text>
-              </v-card>
-            </v-tab-item>
-          </v-tabs-items>
-        </v-card>
-      </v-col>
-    </v-row>
+                  >
+                    <transition name="fade" mode="out-in">
+                      <component :is="viewChess"></component>
+                    </transition>
+                    <v-btn :color="themeColorText" @click="toggleChess"
+                      ><span v-if="chessSummary"> More </span>
+                      <span v-else>Less </span>
+                      -details...
+                    </v-btn>
+                  </v-card-text>
+                </v-card>
+              </v-tab-item>
+            </v-tabs-items>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-lazy>
   </v-container>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations } from "vuex";
 
-const ChessMore = () => import('@/components/ChessMore.vue');
-const ChessLess = () => import('@/components/ChessLess.vue');
-const TableTennisMore = () => import('@/components/TableTennisMore.vue');
-const TableTennisLess = () => import('@/components/TableTennisLess.vue');
+const ChessMore = () => import("@/components/ChessMore.vue");
+const ChessLess = () => import("@/components/ChessLess.vue");
+const TableTennisMore = () => import("@/components/TableTennisMore.vue");
+const TableTennisLess = () => import("@/components/TableTennisLess.vue");
 export default {
   components: {
     TableTennisLess,
@@ -157,19 +118,16 @@ export default {
   },
   computed: {
     ...mapState([
-      'themeColorClass',
-      'themeColorText',
-      'counterThemeColorClass',
-      'counterThemeColorText',
-      'hobbyC',
-      'hobbyAc',
+      "themeColorClass",
+      "themeColorText",
+      "counterThemeColorClass",
+      "counterThemeColorText",
+      "hobbyC",
+      "hobbyAc",
     ]),
   },
   methods: {
-    ...mapMutations([
-      'setHobbyC',
-      'setHobbyAc',
-    ]),
+    ...mapMutations(["setHobbyC", "setHobbyAc"]),
     onHobbyIntersect(entries) {
       this.setHobbyAc(entries[0].isIntersecting);
       this.setHobbyC(entries[0].isIntersecting);
@@ -201,21 +159,25 @@ export default {
 </script>
 
 <style scoped>
-  a, a:link, a:visited {
-    color: #33691E;
-    text-decoration: underline;
-  }
-  a:hover {
-    color: #33691E;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .3s ease;
-  }
+a,
+a:link,
+a:visited {
+  color: #33691e;
+  text-decoration: underline;
+}
+a:hover {
+  color: #33691e;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 16px;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
 
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-  }
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

@@ -1,22 +1,7 @@
 <template>
-  <v-container
-    class="
-      orange
-      lighten-5
-      black--text
-      px-4 py-8
-    "
-    id="skills-container"
-    fluid
-  >
-    <v-row
-      align="center"
-      justify="center"
-      class="my-8"
-    >
-      <v-col
-        class="text-center"
-      >
+  <v-container class="orange lighten-5 black--text px-4 py-8" id="skills-container" fluid>
+    <v-row align="center" justify="center" class="my-8">
+      <v-col class="text-center">
         <h1
           :class="`
             text-h4
@@ -24,7 +9,9 @@
             ${themeColorText}
           `"
           id="nav-skills"
-        >SKILLS AT A GLANCE</h1>
+        >
+          SKILLS AT A GLANCE
+        </h1>
       </v-col>
     </v-row>
     <v-lazy
@@ -35,34 +22,25 @@
         threshold: 1,
       }"
       min-height="100vh"
-      transition='scroll-y-reverse-transition'
+      transition="scroll-y-reverse-transition"
       v-intersect="onSkillsIntersect"
     >
-      <v-row
-        justify="center"
-        class="mx-4"
-      >
-        <v-col
-          cols="10"
-          md="4"
-          class="elevation-16 pa-4"
-        >
+      <v-row justify="center" class="mx-4">
+        <v-col cols="10" md="4" class="elevation-16 pa-4">
           <v-row justify="space-between">
+            <v-col cols="6"> HTML </v-col>
             <v-col cols="6">
-          HTML
-            </v-col>
-            <v-col cols="6">
-          <v-rating
-            empty-icon="mdi-star-outline"
-            full-icon="mdi-star"
-            half-icon="mdi-star-half-full"
-            half-increments
-            readonly
-            color="green darken-4"
-            background-color="green lighten-3"
-            length="6"
-            value="4"
-          ></v-rating>
+              <v-rating
+                empty-icon="mdi-star-outline"
+                full-icon="mdi-star"
+                half-icon="mdi-star-half-full"
+                half-increments
+                readonly
+                color="green darken-4"
+                background-color="green lighten-3"
+                length="6"
+                value="4"
+              ></v-rating>
             </v-col>
           </v-row>
           <h4
@@ -73,510 +51,139 @@
             ${themeColorText}
             ml-4
             text-decoration-underline
-          `">Software</h4>
-          <div class="text-body-2
-            text-md-body-1
-            mx-4"
+          `"
           >
-            <v-chip
-              class="
-                ma-2
-                elevation-8
-              "
-              :color="skillsChipTitleColor"
-            >
-              <v-icon left>
-              mdi-fire
-              </v-icon>
-              <span
-              class="text-decoration-underline">
-              Proficient:
-              </span>
+            Software
+          </h4>
+          <div class="text-body-2 text-md-body-1 mx-4">
+            <v-chip class="ma-2 elevation-8" :color="skillsChipTitleColor">
+              <v-icon left> mdi-fire </v-icon>
+              <span class="text-decoration-underline"> Proficient: </span>
             </v-chip>
             <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Vue.js</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Vue.js</v-chip>
             {
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Vue Router
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >VueX Store
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Vuetify.js
-            </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Vue Router </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">VueX Store </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Vuetify.js </v-chip>
             }
             <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Express.js</v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Adonis.js</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Express.js</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Adonis.js</v-chip>
             <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >C</v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >C++</v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Java</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">C</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">C++</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Java</v-chip>
             <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >html5</v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >css3</v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >javascript</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">html5</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">css3</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">javascript</v-chip>
             <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >jQuery</v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >AJAX</v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >JSON</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">jQuery</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">AJAX</v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">JSON</v-chip>
             <br />
-            <v-chip
-              class="
-                ma-2
-                elevation-8
-              "
-              :color="skillsChipTitleColor"
-            >
-              <v-icon left>
-              mdi-pine-tree-fire
-              </v-icon>
-              <span
-              class="text-decoration-underline">
-              Familiar:
-              </span>
+            <v-chip class="ma-2 elevation-8" :color="skillsChipTitleColor">
+              <v-icon left> mdi-pine-tree-fire </v-icon>
+              <span class="text-decoration-underline"> Familiar: </span>
             </v-chip>
             <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Selenium
-            </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Selenium </v-chip>
+            <br />
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">php </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">PDO </v-chip>
             <br />
             <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >php
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >PDO
-            </v-chip>
-            <br />
-            <v-chip
-              class="
-                ma-2
-                elevation-8
-                text-decoration-underline
-              "
+              class="ma-2 elevation-8 text-decoration-underline"
               :color="skillsChipTitleColor"
             >
               Version control:
             </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >git
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >SVN
-            </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">git </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">SVN </v-chip>
             <br />
             <v-chip
-              class="
-                ma-2
-                elevation-8
-                text-decoration-underline
-              "
+              class="ma-2 elevation-8 text-decoration-underline"
               :color="skillsChipTitleColor"
             >
               Database:
             </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >SQL
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >MongoDB
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >MySQL
-            </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">SQL </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">MongoDB </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">MySQL </v-chip>
             <br />
             <v-chip
-              class="
-                ma-2
-                elevation-8
-                text-decoration-underline
-              "
+              class="ma-2 elevation-8 text-decoration-underline"
               :color="skillsChipTitleColor"
             >
               Cloud/Serverless:
             </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Firebase
-            </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Firebase </v-chip>
             {
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >database
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >authentication
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >hosting
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >storage
-            </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">database </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">authentication </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">hosting </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">storage </v-chip>
             }
           </div>
         </v-col>
-        <v-col
-          cols="10"
-          md="4"
-          class="elevation-16 pa-4"
-        >
-          <h4 :class="`
+        <v-col cols="10" md="4" class="elevation-16 pa-4">
+          <h4
+            :class="`
             text-heading-5
             text-md-heading-4
             font-weight-bold
             ${themeColorText}
             ml-4
             text-decoration-underline
-          `">Node.js frameworks</h4>
-          <div class="text-body-2
-            text-md-body-1
-            mx-4"
+          `"
           >
-            <v-chip
-              class="
-                ma-2
-                elevation-8
-              "
-              :color="skillsChipTitleColor"
-            >
-              <v-icon left>
-              mdi-fire
-              </v-icon>
-              <span
-              class="text-decoration-underline">
-              Proficient:
-              </span>
+            Node.js frameworks
+          </h4>
+          <div class="text-body-2 text-md-body-1 mx-4">
+            <v-chip class="ma-2 elevation-8" :color="skillsChipTitleColor">
+              <v-icon left> mdi-fire </v-icon>
+              <span class="text-decoration-underline"> Proficient: </span>
             </v-chip>
             <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Axios
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >request
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >request-promise
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >bluebird
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Axios </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">request </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">request-promise </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">bluebird </v-chip>
+            <br />
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">canvas </v-chip>
+            <br />
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">moment.js </v-chip>
+            <br />
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">ytdl-core </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">youtube-api </v-chip>
+            <br />
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Discord.js </v-chip>
+            <br />
+            <v-chip class="ma-2 elevation-8" :color="skillsChipTitleColor">
+              <v-icon left> mdi-pine-tree-fire </v-icon>
+              <span class="text-decoration-underline"> Familiar: </span>
             </v-chip>
             <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >canvas
-            </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">node-schedule </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">chokidar </v-chip>
             <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >moment.js
-            </v-chip>
-            <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >ytdl-core
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >youtube-api
-            </v-chip>
-            <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Discord.js
-            </v-chip>
-            <br />
-            <v-chip
-              class="
-                ma-2
-                elevation-8
-              "
-              :color="skillsChipTitleColor"
-            >
-              <v-icon left>
-              mdi-pine-tree-fire
-              </v-icon>
-              <span
-              class="text-decoration-underline">
-              Familiar:
-              </span>
-            </v-chip>
-            <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >node-schedule
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >chokidar
-            </v-chip>
-            <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >tmi.js
-            </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">tmi.js </v-chip>
             +
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >twitch API
-            </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">twitch API </v-chip>
             <br />
             <br />
-            <v-chip
-              class="
-                ma-2
-                elevation-8
-              "
-              :color="skillsChipTitleColor"
-            >
-              <v-icon left>
-              mdi-alert-decagram
-              </v-icon>
-              <span
-              class="text-decoration-underline">
-              Qualities:
-              </span>
+            <v-chip class="ma-2 elevation-8" :color="skillsChipTitleColor">
+              <v-icon left> mdi-alert-decagram </v-icon>
+              <span class="text-decoration-underline"> Qualities: </span>
             </v-chip>
             <br />
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Full-stack
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">Full-stack </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">OOP </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor"
+              >Agile development
             </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >OOP
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >Agile development
-            </v-chip>
-            <v-chip
-              class="
-                ma-1
-                elevation-4
-              "
-              :color="skillsChipBodyColor"
-            >REST API
-            </v-chip>
+            <v-chip class="ma-1 elevation-4" :color="skillsChipBodyColor">REST API </v-chip>
           </div>
         </v-col>
       </v-row>
@@ -585,24 +192,21 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations } from "vuex";
 
 export default {
   computed: {
     ...mapState([
-      'themeColorClass',
-      'themeColorText',
-      'skillsChipTitleColor',
-      'skillsChipBodyColor',
-      'skillsC',
-      'skillsAc',
+      "themeColorClass",
+      "themeColorText",
+      "skillsChipTitleColor",
+      "skillsChipBodyColor",
+      "skillsC",
+      "skillsAc",
     ]),
   },
   methods: {
-    ...mapMutations([
-      'setSkillsC',
-      'setSkillsAc',
-    ]),
+    ...mapMutations(["setSkillsC", "setSkillsAc"]),
     onSkillsIntersect(entries) {
       this.setSkillsAc(entries[0].isIntersecting);
       this.setSkillsC(entries[0].isIntersecting);
@@ -611,6 +215,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

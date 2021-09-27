@@ -16,34 +16,23 @@
         elevation="20"
         shaped
         transition="fab-transition"
-        width=10
+        width="10"
       >
         <template v-slot:action="{ attrs }">
-        <v-chip
-          class="font-weight-black"
-          :color="themeColorClass"
-          text-color="white"
-          v-bind="attrs"
-        >
-          Click menu bar
-          <v-avatar
-            color="white"
-            class="red--text
-              text-h4
-            "
-            size="96"
-            right
+          <v-chip
+            class="font-weight-black"
+            :color="themeColorClass"
+            text-color="white"
+            v-bind="attrs"
           >
-            <v-icon>mdi-arrow-up-circle-outline</v-icon>
-          </v-avatar>
-        </v-chip>
-      </template>
+            Click menu bar
+            <v-avatar color="white" class="red--text text-h4" size="96" right>
+              <v-icon>mdi-arrow-up-circle-outline</v-icon>
+            </v-avatar>
+          </v-chip>
+        </template>
       </v-snackbar>
-      <v-tooltip
-        left
-        transition="slide-x-reverse-transition"
-        v-if="$vuetify.breakpoint.mdAndDown"
-      >
+      <v-tooltip left transition="slide-x-reverse-transition" v-if="$vuetify.breakpoint.mdAndDown">
         <template v-slot:activator="{ on, attrs }">
           <v-app-bar-nav-icon
             v-bind="attrs"
@@ -69,13 +58,10 @@
       :permanent="$vuetify.breakpoint.mdAndUp && activateDrawer"
     >
       <v-list ripple nav>
-        <v-list-item
-          ripple
-        >
+        <v-list-item ripple>
           <v-list-item-content>
             <v-list-item-title
-              :class=
-              "`
+              :class="`
                 pt-4
                 pb-0
                 mb-0
@@ -89,13 +75,10 @@
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item
-          ripple
-        >
+        <v-list-item ripple>
           <v-list-item-content>
             <v-list-item-title
-              :class=
-              "`
+              :class="`
                 mt-0
                 pt-0
                 text-h4
@@ -109,176 +92,136 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <v-divider>
-      </v-divider>
-      <v-list
-        dark
-        dense
-        rounded
-        nav
-      >
+      <v-divider> </v-divider>
+      <v-list dark dense rounded nav>
         <v-list-item
           link
-          @click="$vuetify.goTo(
-            '#nav-profile',
-            {
+          @click="
+            $vuetify.goTo('#nav-profile', {
               duration: 1500,
               easing: 'easeInOutQuint',
-            }
-          )"
+            })
+          "
           :input-value="nameAc"
           color="white"
         >
           <v-list-item-action>
-            <v-icon
-              :class="counterThemeColorText"
-            >mdi-account-circle</v-icon>
+            <v-icon :class="counterThemeColorText">mdi-account-circle</v-icon>
           </v-list-item-action>
-          <v-list-item-content
-          :class="counterThemeColorText">
-            Profile
-          </v-list-item-content>
+          <v-list-item-content :class="counterThemeColorText"> Profile </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
-          @click="$vuetify.goTo(
-            '#nav-skills',
-            {
+          @click="
+            $vuetify.goTo('#nav-skills', {
               duration: 1500,
               easing: 'easeInOutQuint',
-            }
-          )"
+            })
+          "
           :input-value="skillsAc"
           color="white"
         >
           <v-list-item-action>
-            <v-icon
-              :class="counterThemeColorText"
-            >mdi-file-cog</v-icon>
+            <v-icon :class="counterThemeColorText">mdi-file-cog</v-icon>
           </v-list-item-action>
-          <v-list-item-content
-            :class="counterThemeColorText"
-          >
-            Skills
-          </v-list-item-content>
+          <v-list-item-content :class="counterThemeColorText"> Skills </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
-          @click="$vuetify.goTo(
-            '#nav-experience',
-            {
+          @click="
+            $vuetify.goTo('#nav-experience', {
               duration: 1500,
               easing: 'easeInOutQuint',
-            }
-          )"
+            })
+          "
           :input-value="expAc"
           color="white"
         >
           <v-list-item-action>
-            <v-icon
-              :class="counterThemeColorText"
-            >mdi-thumb-up</v-icon>
+            <v-icon :class="counterThemeColorText">mdi-thumb-up</v-icon>
           </v-list-item-action>
-          <v-list-item-content
-            :class="counterThemeColorText"
-          >
+          <v-list-item-content :class="counterThemeColorText">
             Relevant Experience
           </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
-          @click="$vuetify.goTo(
-            '#nav-projects',
-            {
+          @click="
+            $vuetify.goTo('#nav-projects', {
               duration: 1500,
               easing: 'easeInOutQuint',
-            }
-          )"
+            })
+          "
           :input-value="ppAc"
           color="white"
         >
           <v-list-item-action>
-            <v-icon
-              :class="counterThemeColorText"
-            >mdi-wrench</v-icon>
+            <v-icon :class="counterThemeColorText">mdi-wrench</v-icon>
           </v-list-item-action>
-          <v-list-item-content
-            :class="counterThemeColorText"
-          >
+          <v-list-item-content :class="counterThemeColorText">
             Personal Projects
           </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
-          @click="$vuetify.goTo(
-            '#nav-hobby',
-            {
+          @click="
+            $vuetify.goTo('#nav-hobby', {
               duration: 1500,
               easing: 'easeInOutQuint',
-            }
-          )"
+            })
+          "
           :input-value="hobbyAc"
           color="white"
         >
           <v-list-item-action>
-            <v-icon
-              :class="counterThemeColorText"
-            >mdi-table-tennis</v-icon>
+            <v-icon :class="counterThemeColorText">mdi-table-tennis</v-icon>
           </v-list-item-action>
-          <v-list-item-content
-            :class="counterThemeColorText"
-          >
-            Hobbies
-          </v-list-item-content>
+          <v-list-item-content :class="counterThemeColorText"> Hobbies </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-main
-      id="page-one"
-    >
+    <v-main id="page-one">
       <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from "vuex";
 
 export default {
-  name: 'App',
+  name: "App",
 
-  data: () => ({
-  }),
+  data: () => ({}),
   computed: {
     ...mapState([
-      'themeColor',
-      'themeColorClass',
-      'counterThemeColorText',
-      'counterThemeColorClass',
-      'nameAc',
-      'skillsAc',
-      'expAc',
-      'ppAc',
-      'hobbyAc',
-      'activateDrawer',
+      "themeColor",
+      "themeColorClass",
+      "counterThemeColorText",
+      "counterThemeColorClass",
+      "nameAc",
+      "skillsAc",
+      "expAc",
+      "ppAc",
+      "hobbyAc",
+      "activateDrawer",
     ]),
     drawer: {
       get() {
         return this.$store.state.drawer;
       },
       set(value) {
-        this.$store.commit('setDrawer', value);
+        this.$store.commit("setDrawer", value);
       },
     },
   },
 };
 </script>
 <style lang="scss">
-  @import '@/sass/variables.scss';
-
+@import "@/sass/variables.scss";
 </style>
 <style scoped>
-  #page-one {
-    height: 100%;
-  }
+#page-one {
+  height: 100%;
+}
 </style>

@@ -8,95 +8,43 @@
     id="nav-profile"
     v-intersect="onIntersect"
   >
-    <v-row
-      align="center"
-      justify="center"
-      no-gutters
-      :style="mainStyle"
-    >
-      <v-col
-        cols="12"
-        class="text-center
-        "
-      >
-        <transition
-          name="fade"
-          @after-appear="showIm = true"
-          appear
-          :duration="{ enter: 2000 }"
-        >
-        <span
-          class="
-            text-subtitle-2
-            text-md-body-1
-            display-1
-            font-weight-black
-          "
-          v-if="showHi"
-        >Hi</span>
+    <v-row align="center" justify="center" no-gutters :style="mainStyle">
+      <v-col cols="12" class="text-center">
+        <transition name="fade" @after-appear="showIm = true" appear :duration="{ enter: 2000 }">
+          <span class="text-subtitle-2 text-md-body-1 display-1 font-weight-black" v-if="showHi"
+            >Hi</span
+          >
         </transition>
-        <transition
-          name="fade"
-          @after-enter="showName = true"
-          :duration="{ enter: 2000 }"
-        >
-        <span
-          class="
-            text-subtitle-2
-            text-md-body-1
-            display-1
-            font-weight-black
-          "
-          v-if="showIm"
-        >, I'm</span>
+        <transition name="fade" @after-enter="showName = true" :duration="{ enter: 2000 }">
+          <span class="text-subtitle-2 text-md-body-1 display-1 font-weight-black" v-if="showIm"
+            >, I'm</span
+          >
         </transition>
-        <transition
-          name="typing"
-          @after-enter="afterEnterNameEvent"
-          :duration="{ enter: 3000 }"
-        >
-          <h1 class="text-md-h2
-            text-h3
-            font-weight-bold
-            white--text
-            "
-            v-if="showName"
-          >{{ name }}
+        <transition name="typing" @after-enter="afterEnterNameEvent" :duration="{ enter: 3000 }">
+          <h1 class="text-md-h2 text-h3 font-weight-bold white--text" v-if="showName">
+            {{ name }}
           </h1>
         </transition>
-        <transition
-          name="fade"
-          :duration="{ enter: 2000 }"
-        >
-        <h6 class="text-subtitle-2
-          text-md-body-1
-          display-1
-          font-weight-black
-          mt-4
-        "
-          v-if="showSchool"
-        >
-          University of Toronto, Software Engineering
-        </h6>
+        <transition name="fade" :duration="{ enter: 2000 }">
+          <h6
+            class="text-subtitle-2 text-md-body-1 display-1 font-weight-black mt-4"
+            v-if="showSchool"
+          >
+            University of Toronto, Software Engineering
+          </h6>
         </transition>
       </v-col>
     </v-row>
-    <transition
-      name="fade"
-      @after-enter="setContainerHeight"
-      :duration="{ enter: 2000 }"
-    >
-      <ContactInfo
-        v-if="showSchool"
-      ></ContactInfo>
+    <transition name="fade" @after-enter="setContainerHeight" :duration="{ enter: 2000 }">
+      <ContactInfo v-if="showSchool"></ContactInfo>
     </transition>
   </v-container>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations } from "vuex";
 
-const ContactInfo = () => import('./ContactInfo.vue');
+const ContactInfo = () => import("./ContactInfo.vue");
 export default {
   components: {
     ContactInfo,
@@ -107,25 +55,15 @@ export default {
       showIm: false,
       showName: false,
       showSchool: false,
-      mainStyle: { minHeight: '80vh' },
-      name: '',
+      mainStyle: { minHeight: "80vh" },
+      name: "",
     };
   },
   computed: {
-    ...mapState([
-      'themeColorClass',
-      'counterThemeColorText',
-      'nameC',
-      'nameAc',
-    ]),
+    ...mapState(["themeColorClass", "counterThemeColorText", "nameC", "nameAc"]),
   },
   methods: {
-    ...mapMutations([
-      'setNameC',
-      'setNameAc',
-      'setNameStyle',
-      'setActivateDrawer',
-    ]),
+    ...mapMutations(["setNameC", "setNameAc", "setNameStyle", "setActivateDrawer"]),
     onNameIntersect(entries) {
       this.setNameC(entries[0].nameC);
     },
@@ -133,12 +71,12 @@ export default {
       this.setNameAc(entries[0].isIntersecting);
     },
     setContainerHeight() {
-      this.setNameStyle({ minHeight: '60vh' });
-      this.mainStyle = { minHeight: '50vh' };
+      this.setNameStyle({ minHeight: "60vh" });
+      this.mainStyle = { minHeight: "50vh" };
       this.setActivateDrawer(true);
     },
     afterEnterNameEvent() {
-      this.name = 'TENZIN THABKHAE';
+      this.name = "TENZIN THABKHAE";
       this.showSchool = true;
     },
   },
@@ -146,51 +84,55 @@ export default {
 </script>
 
 <style scoped>
-  a, a:link, a:visited {
-    color: #FCE4EC;
-    text-decoration: none;
-  }
-  a:hover {
-    color: #AB47BC;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 20px;
-  }
-  .nav-profile {
-    min-height: 100vh;
-  }
-  #name-two {
-    min-height: 70vh;
-  }
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .3s ease;
-  }
+a,
+a:link,
+a:visited {
+  color: #fce4ec;
+  text-decoration: none;
+}
+a:hover {
+  color: #ab47bc;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 20px;
+}
+.nav-profile {
+  min-height: 100vh;
+}
+#name-two {
+  min-height: 70vh;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
 
-  .fade-enter, .fade-leave-to {
-    opacity: 0;
-  }
-  .fade-appear-active {
-    transition: opacity .3s ease;
-  }
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-appear-active {
+  transition: opacity 0.3s ease;
+}
 
-  .fade-appear {
-    opacity: 0;
+.fade-appear {
+  opacity: 0;
+}
+.typing-enter-active::before {
+  animation: typing 4s linear 0s 1 normal forwards;
+  content: "";
+}
+/* The typing effect */
+@keyframes typing {
+  0% {
+    content: "TENZIN";
   }
-  .typing-enter-active::before {
-    animation:
-      typing 4s linear 0s 1 normal forwards;
-      content: "";
+  90% {
+    content: "TENZIN THABKHAE";
   }
-  /* The typing effect */
-  @keyframes typing {
-    0% {
-      content: "TENZIN";
-    }
-    90% {
-      content: "TENZIN THABKHAE";
-    }
-  }
-  .typing-enter, .typing-leave-to {
-    opacity: 0;
-  }
+}
+.typing-enter,
+.typing-leave-to {
+  opacity: 0;
+}
 </style>

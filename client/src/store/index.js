@@ -1,17 +1,17 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex from "vuex";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    themeColor: '#33691E',
-    themeColorText: 'light-green--text text--darken-4',
-    themeColorClass: 'light-green darken-4',
-    counterThemeColorText: 'pink--text text--lighten-5',
-    counterThemeColorClass: 'pink lighten-5',
-    skillsChipTitleColor: 'grey lighten-3',
-    skillsChipBodyColor: 'grey lighten-2',
+    themeColor: "#33691E",
+    themeColorText: "light-green--text text--darken-4",
+    themeColorClass: "light-green darken-4",
+    counterThemeColorText: "pink--text text--lighten-5",
+    counterThemeColorClass: "pink lighten-5",
+    skillsChipTitleColor: "grey lighten-3",
+    skillsChipBodyColor: "grey lighten-2",
     // lazy loading states below
     nameC: true,
     skillsC: false,
@@ -25,7 +25,7 @@ export default new Vuex.Store({
     ppAc: false,
     hobbyAc: false,
     // style object for Name.vue component
-    nameStyle: { minHeight: '100vh' },
+    nameStyle: { minHeight: "100vh" },
     // layout drawer
     drawer: false,
     activateDrawer: false,
@@ -71,8 +71,6 @@ export default new Vuex.Store({
       state.activateDrawer = value;
     },
   },
-  actions: {
-  },
-  modules: {
-  },
+  actions: {},
+  modules: {},
 });

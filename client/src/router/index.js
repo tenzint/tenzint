@@ -1,32 +1,32 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import goTo from 'vuetify/es5/services/goto';
-import Home from '@/views/Home.vue';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import goTo from "vuetify/es5/services/goto";
+import Home from "@/views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
+    path: "/",
+    name: "Home",
     component: Home,
     meta: {
-      title: 'Tenzin Thabkhae',
+      title: "Tenzin Thabkhae",
       metaTags: [
         {
-          name: 'description',
-          content: 'The personal web app of Tenzin Thabkhae',
+          name: "description",
+          content: "The personal web app of Tenzin Thabkhae",
         },
         {
-          name: 'og:description',
-          content: 'The personal web app of Tenzin Thabkhae',
+          name: "og:description",
+          content: "The personal web app of Tenzin Thabkhae",
         },
       ],
     },
   },
   {
-    path: '*',
-    redirect: '/',
+    path: "*",
+    redirect: "/",
   },
 ];
 
@@ -59,7 +59,7 @@ function loadComponent(addrString) {
 */
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   scrollBehavior: (to, from, savedPosition) => {
     let scrollTo = 0;
@@ -74,7 +74,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || 'Tenzin Thabkhae';
+  document.title = to.meta.title || "Tenzin Thabkhae";
   next();
 });
 
