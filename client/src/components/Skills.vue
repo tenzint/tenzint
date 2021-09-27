@@ -47,6 +47,24 @@
           md="4"
           class="elevation-16 pa-4"
         >
+          <v-row justify="space-between">
+            <v-col cols="6">
+          HTML
+            </v-col>
+            <v-col cols="6">
+          <v-rating
+            empty-icon="mdi-star-outline"
+            full-icon="mdi-star"
+            half-icon="mdi-star-half-full"
+            half-increments
+            readonly
+            color="green darken-4"
+            background-color="green lighten-3"
+            length="6"
+            value="4"
+          ></v-rating>
+            </v-col>
+          </v-row>
           <h4
             :class="`
             text-heading-5
