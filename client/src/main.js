@@ -1,20 +1,20 @@
 // @/main.js
-import Vue from "vue";
-import WebFontLoader from "webfontloader";
-import * as firebase from "firebase/app";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import vuetify from "./plugins/vuetify";
-import "firebase/auth";
-import "firebase/storage";
+import Vue from 'vue';
+import WebFontLoader from 'webfontloader';
+import * as firebase from 'firebase/app';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import vuetify from './plugins/vuetify';
+import 'firebase/auth';
+import 'firebase/storage';
 
-const fbConfig = require("@/../hidden/firebaseConfig.json");
+const fbConfig = require('@/../hidden/firebaseConfig.json');
 
 // async load fonts
 WebFontLoader.load({
   google: {
-    families: ["Open Sans", "sans-serif"],
+    families: ['Open Sans', 'sans-serif'],
   },
 });
 
@@ -26,5 +26,5 @@ new Vue({
   store,
   vuetify,
   render: (h) => h(App),
-  mounted: () => document.dispatchEvent(new Event("x-app-rendered")),
-}).$mount("#app");
+  mounted: () => document.dispatchEvent(new Event('x-app-rendered')),
+}).$mount('#app');

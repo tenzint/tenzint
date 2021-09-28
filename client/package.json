@@ -56,8 +56,9 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "prettier.eslintIntegration": true,
-    "rules": {}
+    "rules": {
+      "prettier/prettier": "error"
+    }
   },
   "browserslist": [
     "> 1%",

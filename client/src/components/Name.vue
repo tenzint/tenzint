@@ -10,24 +10,49 @@
   >
     <v-row align="center" justify="center" no-gutters :style="mainStyle">
       <v-col cols="12" class="text-center">
-        <transition name="fade" @after-appear="showIm = true" appear :duration="{ enter: 2000 }">
-          <span class="text-subtitle-2 text-md-body-1 display-1 font-weight-black" v-if="showHi"
+        <transition
+          name="fade"
+          @after-appear="showIm = true"
+          appear
+          :duration="{ enter: 2000 }"
+        >
+          <span
+            class="text-subtitle-2 text-md-body-1 display-1 font-weight-black"
+            v-if="showHi"
             >Hi</span
           >
         </transition>
-        <transition name="fade" @after-enter="showName = true" :duration="{ enter: 2000 }">
-          <span class="text-subtitle-2 text-md-body-1 display-1 font-weight-black" v-if="showIm"
+        <transition
+          name="fade"
+          @after-enter="showName = true"
+          :duration="{ enter: 2000 }"
+        >
+          <span
+            class="text-subtitle-2 text-md-body-1 display-1 font-weight-black"
+            v-if="showIm"
             >, I'm</span
           >
         </transition>
-        <transition name="typing" @after-enter="afterEnterNameEvent" :duration="{ enter: 3000 }">
-          <h1 class="text-md-h2 text-h3 font-weight-bold white--text" v-if="showName">
+        <transition
+          name="typing"
+          @after-enter="afterEnterNameEvent"
+          :duration="{ enter: 3000 }"
+        >
+          <h1
+            class="text-md-h2 text-h3 font-weight-bold white--text"
+            v-if="showName"
+          >
             {{ name }}
           </h1>
         </transition>
         <transition name="fade" :duration="{ enter: 2000 }">
           <h6
-            class="text-subtitle-2 text-md-body-1 display-1 font-weight-black mt-4"
+            class="
+              text-subtitle-2 text-md-body-1
+              display-1
+              font-weight-black
+              mt-4
+            "
             v-if="showSchool"
           >
             University of Toronto, Software Engineering
@@ -35,16 +60,20 @@
         </transition>
       </v-col>
     </v-row>
-    <transition name="fade" @after-enter="setContainerHeight" :duration="{ enter: 2000 }">
+    <transition
+      name="fade"
+      @after-enter="setContainerHeight"
+      :duration="{ enter: 2000 }"
+    >
       <ContactInfo v-if="showSchool"></ContactInfo>
     </transition>
   </v-container>
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations } from 'vuex';
 
-const ContactInfo = () => import("./ContactInfo.vue");
+const ContactInfo = () => import('./ContactInfo.vue');
 export default {
   components: {
     ContactInfo,
@@ -55,15 +84,25 @@ export default {
       showIm: false,
       showName: false,
       showSchool: false,
-      mainStyle: { minHeight: "80vh" },
-      name: "",
+      mainStyle: { minHeight: '80vh' },
+      name: '',
     };
   },
   computed: {
-    ...mapState(["themeColorClass", "counterThemeColorText", "nameC", "nameAc"]),
+    ...mapState([
+      'themeColorClass',
+      'counterThemeColorText',
+      'nameC',
+      'nameAc',
+    ]),
   },
   methods: {
-    ...mapMutations(["setNameC", "setNameAc", "setNameStyle", "setActivateDrawer"]),
+    ...mapMutations([
+      'setNameC',
+      'setNameAc',
+      'setNameStyle',
+      'setActivateDrawer',
+    ]),
     onNameIntersect(entries) {
       this.setNameC(entries[0].nameC);
     },
@@ -71,12 +110,12 @@ export default {
       this.setNameAc(entries[0].isIntersecting);
     },
     setContainerHeight() {
-      this.setNameStyle({ minHeight: "60vh" });
-      this.mainStyle = { minHeight: "50vh" };
+      this.setNameStyle({ minHeight: '60vh' });
+      this.mainStyle = { minHeight: '50vh' };
       this.setActivateDrawer(true);
     },
     afterEnterNameEvent() {
-      this.name = "TENZIN THABKHAE";
+      this.name = 'TENZIN THABKHAE';
       this.showSchool = true;
     },
   },
@@ -120,15 +159,15 @@ a:hover {
 }
 .typing-enter-active::before {
   animation: typing 4s linear 0s 1 normal forwards;
-  content: "";
+  content: '';
 }
 /* The typing effect */
 @keyframes typing {
   0% {
-    content: "TENZIN";
+    content: 'TENZIN';
   }
   90% {
-    content: "TENZIN THABKHAE";
+    content: 'TENZIN THABKHAE';
   }
 }
 .typing-enter,

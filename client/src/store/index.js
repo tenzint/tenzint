@@ -1,17 +1,17 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    themeColor: "#33691E",
-    themeColorText: "light-green--text text--darken-4",
-    themeColorClass: "light-green darken-4",
-    counterThemeColorText: "pink--text text--lighten-5",
-    counterThemeColorClass: "pink lighten-5",
-    skillsChipTitleColor: "grey lighten-3",
-    skillsChipBodyColor: "grey lighten-2",
+    themeColor: '#33691E',
+    themeColorText: 'light-green--text text--darken-4',
+    themeColorClass: 'light-green darken-4',
+    counterThemeColorText: 'pink--text text--lighten-5',
+    counterThemeColorClass: 'pink lighten-5',
+    skillsChipTitleColor: 'grey lighten-3',
+    skillsChipBodyColor: 'grey lighten-2',
     skillsArray: [],
     qualArray: [],
     // lazy loading states below
@@ -27,7 +27,7 @@ export default new Vuex.Store({
     ppAc: false,
     hobbyAc: false,
     // style object for Name.vue component
-    nameStyle: { minHeight: "100vh" },
+    nameStyle: { minHeight: '100vh' },
     // layout drawer
     drawer: false,
     activateDrawer: false,
@@ -87,92 +87,92 @@ export default new Vuex.Store({
   },
   actions: {
     initSkillsArray({ commit }) {
-      commit("resetSkillsArray");
-      commit("resetQualArray");
+      commit('resetSkillsArray');
+      commit('resetQualArray');
 
       // ----- Instantiating skills array (software skill ratings) -------
-      commit("appendSkillsArray", {
-        mdi: "mdi-language-html5",
-        name: "HTML",
-        key: "html",
+      commit('appendSkillsArray', {
+        mdi: 'mdi-language-html5',
+        name: 'HTML',
+        key: 'html',
         value: 4,
       });
-      commit("appendSkillsArray", {
-        mdi: "mdi-language-css3",
-        name: "CSS",
-        key: "css",
+      commit('appendSkillsArray', {
+        mdi: 'mdi-language-css3',
+        name: 'CSS',
+        key: 'css',
         value: 4,
       });
-      commit("appendSkillsArray", {
-        mdi: "mdi-vuetify",
-        name: "Vue.js",
-        key: "vue",
+      commit('appendSkillsArray', {
+        mdi: 'mdi-vuetify',
+        name: 'Vue.js',
+        key: 'vue',
         value: 4.5,
-        hint: "Vue Router, VueX store, Vuetify",
+        hint: 'Vue Router, VueX store, Vuetify',
       });
-      commit("appendSkillsArray", {
-        mdi: "mdi-nodejs",
-        name: "Node.js",
-        key: "node",
+      commit('appendSkillsArray', {
+        mdi: 'mdi-nodejs',
+        name: 'Node.js',
+        key: 'node',
         value: 4.5,
       });
-      commit("appendSkillsArray", {
-        mdi: "mdi-nodejs",
-        name: "Express.js",
-        key: "express",
+      commit('appendSkillsArray', {
+        mdi: 'mdi-nodejs',
+        name: 'Express.js',
+        key: 'express',
         value: 4,
       });
-      commit("appendSkillsArray", {
-        mdi: "mdi-git",
-        name: "Git",
-        key: "git",
+      commit('appendSkillsArray', {
+        mdi: 'mdi-git',
+        name: 'Git',
+        key: 'git',
         value: 5,
         divide: true,
       });
-      commit("appendSkillsArray", {
-        mdi: "mdi-database-search",
-        name: "SQL",
-        key: "sql",
+      commit('appendSkillsArray', {
+        mdi: 'mdi-database-search',
+        name: 'SQL',
+        key: 'sql',
         value: 3.5,
-        hint: "MySQL, PostGre, SQLite2, ORM",
+        hint: 'MySQL, PostGre, SQLite2, ORM',
       });
-      commit("appendSkillsArray", {
-        mdi: "mdi-leaf",
-        name: "MongoDB",
-        key: "mongodb",
+      commit('appendSkillsArray', {
+        mdi: 'mdi-leaf',
+        name: 'MongoDB',
+        key: 'mongodb',
         value: 3.5,
         divide: true,
       });
-      commit("appendSkillsArray", {
-        mdi: "mdi-firebase",
-        name: "Firebase",
-        key: "firebase",
+      commit('appendSkillsArray', {
+        mdi: 'mdi-firebase',
+        name: 'Firebase',
+        key: 'firebase',
         value: 5,
-        hint: "Real-time database, authentication, hosting, storage",
+        hint: 'Real-time database, authentication, hosting, storage',
       });
 
-      // ----------------------- instantiating qualities ratings ---------------------------------------
+      // ----------------------- instantiating qualities ratings ------------------------------
 
-      commit("appendQualArray", {
-        mdi: "mdi-rotate-right",
-        name: "Agile",
-        key: "agile",
+      commit('appendQualArray', {
+        mdi: 'mdi-rotate-right',
+        name: 'Agile',
+        key: 'agile',
         value: 4,
-        hint: "Agile Development model"
+        hint: 'Agile Development model',
       });
-      commit("appendQualArray", {
-        mdi: "mdi-desktop-classic",
-        name: "OOP",
-        key: "oop",
+      commit('appendQualArray', {
+        mdi: 'mdi-desktop-classic',
+        name: 'OOP',
+        key: 'oop',
         value: 4,
-        hint: "Object-oriented programming"
+        hint: 'Object-oriented programming',
       });
-      commit("appendQualArray", {
-        mdi: "mdi-dna",
-        name: "REST",
-        key: "rest",
+      commit('appendQualArray', {
+        mdi: 'mdi-dna',
+        name: 'REST',
+        key: 'rest',
         value: 4,
-        hint: "Representational State Transfer concept"
+        hint: 'Representational State Transfer concept',
       });
     },
   },

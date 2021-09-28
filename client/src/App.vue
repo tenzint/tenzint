@@ -32,7 +32,11 @@
           </v-chip>
         </template>
       </v-snackbar>
-      <v-tooltip left transition="slide-x-reverse-transition" v-if="$vuetify.breakpoint.mdAndDown">
+      <v-tooltip
+        left
+        transition="slide-x-reverse-transition"
+        v-if="$vuetify.breakpoint.mdAndDown"
+      >
         <template v-slot:activator="{ on, attrs }">
           <v-app-bar-nav-icon
             v-bind="attrs"
@@ -108,7 +112,9 @@
           <v-list-item-action>
             <v-icon :class="counterThemeColorText">mdi-account-circle</v-icon>
           </v-list-item-action>
-          <v-list-item-content :class="counterThemeColorText"> Profile </v-list-item-content>
+          <v-list-item-content :class="counterThemeColorText">
+            Profile
+          </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
@@ -124,7 +130,9 @@
           <v-list-item-action>
             <v-icon :class="counterThemeColorText">mdi-equalizer</v-icon>
           </v-list-item-action>
-          <v-list-item-content :class="counterThemeColorText"> Skills </v-list-item-content>
+          <v-list-item-content :class="counterThemeColorText">
+            Skills
+          </v-list-item-content>
         </v-list-item>
         <v-list-item
           link
@@ -176,7 +184,9 @@
           <v-list-item-action>
             <v-icon :class="counterThemeColorText">mdi-table-tennis</v-icon>
           </v-list-item-action>
-          <v-list-item-content :class="counterThemeColorText"> Hobbies </v-list-item-content>
+          <v-list-item-content :class="counterThemeColorText">
+            Hobbies
+          </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -187,38 +197,38 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
 
 export default {
-  name: "App",
+  name: 'App',
 
   data: () => ({}),
   computed: {
     ...mapState([
-      "themeColor",
-      "themeColorClass",
-      "counterThemeColorText",
-      "counterThemeColorClass",
-      "nameAc",
-      "skillsAc",
-      "expAc",
-      "ppAc",
-      "hobbyAc",
-      "activateDrawer",
+      'themeColor',
+      'themeColorClass',
+      'counterThemeColorText',
+      'counterThemeColorClass',
+      'nameAc',
+      'skillsAc',
+      'expAc',
+      'ppAc',
+      'hobbyAc',
+      'activateDrawer',
     ]),
     drawer: {
       get() {
         return this.$store.state.drawer;
       },
       set(value) {
-        this.$store.commit("setDrawer", value);
+        this.$store.commit('setDrawer', value);
       },
     },
   },
 };
 </script>
 <style lang="scss">
-@import "@/sass/variables.scss";
+@import '@/sass/variables.scss';
 </style>
 <style scoped>
 #page-one {

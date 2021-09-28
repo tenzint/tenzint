@@ -9,15 +9,15 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
 
-const Name = () => import("@/components/Name.vue");
-const Skills = () => import("@/components/Skills.vue");
-const Experience = () => import("@/components/Experience.vue");
-const PersonalProjects = () => import("@/components/PersonalProjects.vue");
-const Hobby = () => import("@/components/Hobby.vue");
+const Name = () => import('@/components/Name.vue');
+const Skills = () => import('@/components/Skills.vue');
+const Experience = () => import('@/components/Experience.vue');
+const PersonalProjects = () => import('@/components/PersonalProjects.vue');
+const Hobby = () => import('@/components/Hobby.vue');
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     Name,
     Skills,
@@ -26,13 +26,13 @@ export default {
     Hobby,
   },
   computed: {
-    ...mapState(["nameStyle"]),
+    ...mapState(['nameStyle']),
   },
 };
 </script>
 
 <style lang="scss">
-@import "@/sass/variables.scss";
+@import '@/sass/variables.scss';
 </style>
 <style>
 body {

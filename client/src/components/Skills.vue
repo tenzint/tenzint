@@ -1,5 +1,9 @@
 <template>
-  <v-container class="orange lighten-5 black--text px-4 py-8" id="skills-container" fluid>
+  <v-container
+    class="orange lighten-5 black--text px-4 py-8"
+    id="skills-container"
+    fluid
+  >
     <v-row align="center" justify="center" class="my-8">
       <v-col class="text-center">
         <h1
@@ -41,10 +45,20 @@
             Qualities
           </h4>
           <template v-for="(qualObj, index) in qualArray">
-            <v-row align="center" justify="center" :key="qualObj.key" class="my-0 py-0">
+            <v-row
+              align="center"
+              justify="center"
+              :key="qualObj.key"
+              class="my-0 py-0"
+            >
               <v-tooltip top>
                 <template v-slot:activator="{ on, attrs }">
-                  <v-col cols="6" md="4" class="text-right my-0 py-0" v-bind="attrs" v-on="on"
+                  <v-col
+                    cols="6"
+                    md="4"
+                    class="text-right my-0 py-0"
+                    v-bind="attrs"
+                    v-on="on"
                     ><v-chip color="green darken-4" outlined class="my-2" dark>
                       <v-icon class="mr-2"> {{ qualObj.mdi }}</v-icon>
                       {{ qualObj.name }}
@@ -89,10 +103,20 @@
             Software
           </h4>
           <template v-for="(skillObj, index) in skillsArray">
-            <v-row align="center" justify="center" :key="skillObj.key" class="my-0 py-0">
+            <v-row
+              align="center"
+              justify="center"
+              :key="skillObj.key"
+              class="my-0 py-0"
+            >
               <v-tooltip top>
                 <template v-slot:activator="{ on, attrs }">
-                  <v-col cols="6" md="4" class="text-right my-0 py-0" v-bind="attrs" v-on="on"
+                  <v-col
+                    cols="6"
+                    md="4"
+                    class="text-right my-0 py-0"
+                    v-bind="attrs"
+                    v-on="on"
                     ><v-chip color="green darken-4" outlined class="my-2" dark>
                       <v-icon class="mr-2"> {{ skillObj.mdi }}</v-icon>
                       {{ skillObj.name }}
@@ -128,31 +152,31 @@
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from "vuex";
+import { mapState, mapMutations, mapActions } from 'vuex';
 
 export default {
   computed: {
     ...mapState([
-      "themeColorClass",
-      "themeColorText",
-      "skillsChipTitleColor",
-      "skillsChipBodyColor",
-      "skillsC",
-      "skillsAc",
-      "skillsArray",
-      "qualArray",
+      'themeColorClass',
+      'themeColorText',
+      'skillsChipTitleColor',
+      'skillsChipBodyColor',
+      'skillsC',
+      'skillsAc',
+      'skillsArray',
+      'qualArray',
     ]),
   },
   mounted() {
     this.initSkillsArray();
   },
   methods: {
-    ...mapMutations(["setSkillsC", "setSkillsAc"]),
+    ...mapMutations(['setSkillsC', 'setSkillsAc']),
     onSkillsIntersect(entries) {
       this.setSkillsAc(entries[0].isIntersecting);
       this.setSkillsC(entries[0].isIntersecting);
     },
-    ...mapActions(["initSkillsArray"]),
+    ...mapActions(['initSkillsArray']),
   },
 };
 </script>

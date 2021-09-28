@@ -1,5 +1,9 @@
 <template>
-  <v-container class="deep-orange lighten-5 black--text px-4 py-8" fluid id="hobby-container">
+  <v-container
+    class="deep-orange lighten-5 black--text px-4 py-8"
+    fluid
+    id="hobby-container"
+  >
     <v-row align="center" justify="center" class="my-8">
       <v-col class="text-center">
         <h1
@@ -94,12 +98,12 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations } from 'vuex';
 
-const ChessMore = () => import("@/components/ChessMore.vue");
-const ChessLess = () => import("@/components/ChessLess.vue");
-const TableTennisMore = () => import("@/components/TableTennisMore.vue");
-const TableTennisLess = () => import("@/components/TableTennisLess.vue");
+const ChessMore = () => import('@/components/ChessMore.vue');
+const ChessLess = () => import('@/components/ChessLess.vue');
+const TableTennisMore = () => import('@/components/TableTennisMore.vue');
+const TableTennisLess = () => import('@/components/TableTennisLess.vue');
 export default {
   components: {
     TableTennisLess,
@@ -118,16 +122,16 @@ export default {
   },
   computed: {
     ...mapState([
-      "themeColorClass",
-      "themeColorText",
-      "counterThemeColorClass",
-      "counterThemeColorText",
-      "hobbyC",
-      "hobbyAc",
+      'themeColorClass',
+      'themeColorText',
+      'counterThemeColorClass',
+      'counterThemeColorText',
+      'hobbyC',
+      'hobbyAc',
     ]),
   },
   methods: {
-    ...mapMutations(["setHobbyC", "setHobbyAc"]),
+    ...mapMutations(['setHobbyC', 'setHobbyAc']),
     onHobbyIntersect(entries) {
       this.setHobbyAc(entries[0].isIntersecting);
       this.setHobbyC(entries[0].isIntersecting);
