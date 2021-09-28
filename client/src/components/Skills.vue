@@ -55,7 +55,6 @@
                 <template v-slot:activator="{ on, attrs }">
                   <v-col
                     cols="6"
-                    md="4"
                     class="text-right my-0 py-0"
                     v-bind="attrs"
                     v-on="on"
@@ -67,12 +66,12 @@
                 </template>
                 <span v-if="!!qualObj.hint">{{ qualObj.hint }}</span>
               </v-tooltip>
-              <v-col cols="6" md="8" class="text-left my-0 py-0">
+              <v-col cols="6" class="text-left my-0 py-0">
                 <v-rating
                   readonly
                   half-increments
                   color="green darken-4"
-                  background-color="grey darken-3"
+                  background-color="green darken-4"
                   length="5"
                   half-icon="mdi-star-half-full"
                   dense
@@ -83,7 +82,7 @@
             </v-row>
             <v-divider
               v-if="qualObj.divide"
-              class="green lighten-1"
+              class="green darken-4 my-2"
               :key="qualObj.key + '-' + index"
             ></v-divider>
           </template>
@@ -113,7 +112,6 @@
                 <template v-slot:activator="{ on, attrs }">
                   <v-col
                     cols="6"
-                    md="4"
                     class="text-right my-0 py-0"
                     v-bind="attrs"
                     v-on="on"
@@ -125,12 +123,12 @@
                 </template>
                 <span v-if="!!skillObj.hint">{{ skillObj.hint }}</span>
               </v-tooltip>
-              <v-col cols="6" md="8" class="text-left my-0 py-0">
+              <v-col cols="6" class="text-left my-0 py-0">
                 <v-rating
                   readonly
                   half-increments
                   color="green darken-4"
-                  background-color="grey darken-3"
+                  background-color="green darken-4"
                   length="5"
                   half-icon="mdi-star-half-full"
                   dense
@@ -141,7 +139,7 @@
             </v-row>
             <v-divider
               v-if="skillObj.divide"
-              class="green lighten-1"
+              class="green darken-4 my-2"
               :key="skillObj.key + '-' + index"
             ></v-divider>
           </template>
