@@ -37,12 +37,12 @@
             text-md-heading-4
             font-weight-bold
             ${themeColorText}
-            ml-4
+            mb-4
             text-center
             text-decoration-underline
           `"
           >
-            Qualities
+            QUALITIES
           </h4>
           <template v-for="(qualObj, index) in qualArray">
             <v-row
@@ -51,7 +51,7 @@
               :key="qualObj.key"
               class="my-0 py-0"
             >
-              <v-tooltip top>
+              <v-tooltip top :disabled="!qualObj.hint">
                 <template v-slot:activator="{ on, attrs }">
                   <v-col
                     cols="6"
@@ -94,12 +94,12 @@
             text-md-heading-4
             font-weight-bold
             ${themeColorText}
-            ml-4
+            mb-4
             text-center
             text-decoration-underline
           `"
           >
-            Software
+            SOFTWARE
           </h4>
           <template v-for="(skillObj, index) in skillsArray">
             <v-row
@@ -108,7 +108,7 @@
               :key="skillObj.key"
               class="my-0 py-0"
             >
-              <v-tooltip top>
+              <v-tooltip top :disabled="!skillObj.hint">
                 <template v-slot:activator="{ on, attrs }">
                   <v-col
                     cols="6"
