@@ -170,6 +170,7 @@
             Projects
           </v-list-item-content>
         </v-list-item>
+        <!--
         <v-list-item
           link
           @click="
@@ -188,6 +189,7 @@
             Hobbies
           </v-list-item-content>
         </v-list-item>
+        -->
       </v-list>
     </v-navigation-drawer>
     <v-main id="page-one">

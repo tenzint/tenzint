@@ -51,7 +51,7 @@
               :key="qualObj.key"
               class="my-0 py-0"
             >
-              <v-tooltip top :disabled="!qualObj.hint">
+              <v-tooltip right :disabled="!qualObj.hint" color="green darken-4">
                 <template v-slot:activator="{ on, attrs }">
                   <v-col
                     cols="6"
@@ -108,7 +108,11 @@
               :key="skillObj.key"
               class="my-0 py-0"
             >
-              <v-tooltip top :disabled="!skillObj.hint">
+              <v-tooltip
+                right
+                :disabled="!skillObj.hint"
+                color="green darken-4"
+              >
                 <template v-slot:activator="{ on, attrs }">
                   <v-col
                     cols="6"

@@ -3,8 +3,8 @@
     <Name :style="nameStyle"></Name>
     <Skills class="compItem"></Skills>
     <Experience class="compItem"></Experience>
-    <PersonalProjects class="compItem"></PersonalProjects>
-    <Hobby class="compItem"></Hobby>
+    <ProjectsGrid class="compItem"></ProjectsGrid>
+    <!-- <Hobby class="compItem"></Hobby> -->
   </div>
 </template>
 
@@ -14,16 +14,18 @@ import { mapState } from 'vuex';
 const Name = () => import('@/components/Name.vue');
 const Skills = () => import('@/components/Skills.vue');
 const Experience = () => import('@/components/Experience.vue');
-const PersonalProjects = () => import('@/components/PersonalProjects.vue');
-const Hobby = () => import('@/components/Hobby.vue');
+// const PersonalProjects = () => import('@/components/PersonalProjects.vue');
+const ProjectsGrid = () => import('@/components/ProjectsGrid.vue');
+// const Hobby = () => import('@/components/Hobby.vue');
 export default {
   name: 'Home',
   components: {
     Name,
     Skills,
     Experience,
-    PersonalProjects,
-    Hobby,
+    // PersonalProjects,
+    ProjectsGrid,
+    // Hobby,
   },
   computed: {
     ...mapState(['nameStyle']),
