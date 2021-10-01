@@ -175,6 +175,12 @@ export default new Vuex.Store({
         value: 4,
         hint: 'Representational State Transfer concept',
       });
+      commit('appendQualArray', {
+        mdi: 'mdi-monitor-cellphone',
+        name: 'Responsive',
+        key: 'responsive',
+        value: 4.5,
+      });
     },
   },
   modules: {
