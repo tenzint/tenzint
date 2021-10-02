@@ -45,7 +45,7 @@
                   <div>
                     <v-img
                       width="100vw"
-                      height="200px"
+                      height="220px"
                       :src="project.img"
                       contain
                     >
@@ -76,7 +76,6 @@
                           v-card--reveal
                           black--text
                         "
-                        ripple
                         style="height: 100%"
                       >
                         <v-card-title
@@ -84,15 +83,35 @@
                         >
                           Accomplishments
                         </v-card-title>
-                        <v-card-text class="hoverText">
-                          <ul>
-                            <span
-                              class="text-body-1 px-4"
-                              v-html="project.points"
-                            ></span>
-                          </ul>
-                        </v-card-text>
-                        <v-spacer></v-spacer>
+                        <v-row
+                          align-content="space-between"
+                          class="hoverText ma-0 pa-0 yellow"
+                        >
+                          <v-col cols="12" class="ma-0 pa-0 px-4 info">
+                            <ul class="text-left mb-0 pb-0">
+                              <span
+                                class="text-body-1 px-4"
+                                v-html="project.points"
+                              ></span>
+                            </ul>
+                          </v-col>
+                          <v-col
+                            cols="12"
+                            class="ma-0 pa-0 mx-auto success text-center"
+                          >
+                            <v-btn
+                              color="green darken-4"
+                              large
+                              outlined
+                              class="text-center ma-0"
+                              v-ripple="{
+                                class: 'green--text text--darken-4',
+                              }"
+                              @click.stop="dialog = true"
+                              ><b>LEARN MORE</b></v-btn
+                            >
+                          </v-col>
+                        </v-row>
                         <v-divider class="green darken-4"></v-divider>
                         <v-card-actions>
                           <v-btn
@@ -128,6 +147,30 @@
         </v-row>
       </v-container>
     </v-lazy>
+    <v-dialog v-model="dialog" max-width="290">
+      <v-card>
+        <v-card-title class="text-h5">
+          Use Google's location service?
+        </v-card-title>
+
+        <v-card-text>
+          Let Google help apps determine location. This means sending anonymous
+          location data to Google, even when no apps are running.
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn color="green darken-1" text @click="dialog = false">
+            Disagree
+          </v-btn>
+
+          <v-btn color="green darken-1" text @click="dialog = false">
+            Agree
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -135,6 +178,11 @@
 import { mapState, mapMutations, mapActions } from 'vuex';
 
 export default {
+  data() {
+    return {
+      dialog: false,
+    };
+  },
   computed: {
     ...mapState(['themeColorText', 'counterThemeColorClass', 'ppC', 'ppAc']),
     ...mapState('projects', ['projects']),
@@ -186,7 +234,10 @@ a:hover {
   width: 100%;
 }
 .hoverText {
-  min-height: 200px;
+  min-height: 220px;
   max-height: 300px;
+}
+.v-btn i:hover {
+  transform: scale(1.15);
 }
 </style>
