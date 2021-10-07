@@ -85,9 +85,9 @@
                         </v-card-title>
                         <v-row
                           align-content="space-between"
-                          class="hoverText ma-0 pa-0 yellow"
+                          class="hoverText ma-0 pa-0"
                         >
-                          <v-col cols="12" class="ma-0 pa-0 px-4 info">
+                          <v-col cols="12" class="ma-0 pa-0 px-4">
                             <ul class="text-left mb-0 pb-0">
                               <span
                                 class="text-body-1 px-4"
@@ -97,17 +97,17 @@
                           </v-col>
                           <v-col
                             cols="12"
-                            class="ma-0 pa-0 mx-auto success text-center"
+                            class="ma-0 pa-0 mx-auto text-center"
                           >
                             <v-btn
                               color="green darken-4"
                               large
                               outlined
-                              class="text-center ma-0"
+                              class="text-center ma-0 mb-4"
                               v-ripple="{
                                 class: 'green--text text--darken-4',
                               }"
-                              @click.stop="dialog = true"
+                              @click.stop="btnClicked(project.key)"
                               ><b>LEARN MORE</b></v-btn
                             >
                           </v-col>
@@ -147,28 +147,26 @@
         </v-row>
       </v-container>
     </v-lazy>
-    <v-dialog v-model="dialog" max-width="290">
+    <v-dialog
+      v-model="dialog"
+      transition="dialog-bottom-transition"
+      overlay-color="green darken-4"
+      max-width="600px"
+    >
       <v-card>
-        <v-card-title class="text-h5">
-          Use Google's location service?
+        <v-card-title class="font-weight-bold pt-4 justify-center text-h5"
+          >{{ snapObj.title }}
         </v-card-title>
 
         <v-card-text>
-          Let Google help apps determine location. This means sending anonymous
-          location data to Google, even when no apps are running.
+          <ul class="text-body-2 text-md-body-1 mx-4">
+            <span v-html="snapObj.points"></span>
+            <li>
+              <span class="text-decoration-underline">Utilized:</span>
+              {{ snapObj.utilized }}
+            </li>
+          </ul>
         </v-card-text>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-
-          <v-btn color="green darken-1" text @click="dialog = false">
-            Disagree
-          </v-btn>
-
-          <v-btn color="green darken-1" text @click="dialog = false">
-            Agree
-          </v-btn>
-        </v-card-actions>
       </v-card>
     </v-dialog>
   </v-container>
@@ -185,17 +183,23 @@ export default {
   },
   computed: {
     ...mapState(['themeColorText', 'counterThemeColorClass', 'ppC', 'ppAc']),
-    ...mapState('projects', ['projects']),
+    ...mapState('projects', ['projects', 'detailed', 'pKey', 'snapObj']),
   },
   mounted() {
     this.init();
   },
   methods: {
     ...mapMutations(['setPpC', 'setPpAc']),
+    ...mapMutations('projects', ['setPKey', 'setSnapObj']),
     ...mapActions('projects', ['init']),
     onPPIntersect(entries) {
       this.setPpAc(entries[0].isIntersecting);
       // this.setPpC(entries[0].isIntersecting);
+    },
+    btnClicked(pkey) {
+      this.setPKey(pkey);
+      this.setSnapObj(this.detailed.find((p) => p.key === pkey));
+      this.dialog = true;
     },
   },
 };

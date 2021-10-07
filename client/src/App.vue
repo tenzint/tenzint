@@ -110,7 +110,11 @@
           color="white"
         >
           <v-list-item-action>
-            <v-icon :class="counterThemeColorText">mdi-account-circle</v-icon>
+            <v-icon
+              color="teal accent-2"
+              :class="counterThemeColorText + ' mIcon'"
+              >mdi-account</v-icon
+            >
           </v-list-item-action>
           <v-list-item-content :class="counterThemeColorText">
             Profile
@@ -128,7 +132,11 @@
           color="white"
         >
           <v-list-item-action>
-            <v-icon :class="counterThemeColorText">mdi-equalizer</v-icon>
+            <v-icon
+              color="purple accent-2"
+              :class="counterThemeColorText + ' mIcon'"
+              >mdi-equalizer</v-icon
+            >
           </v-list-item-action>
           <v-list-item-content :class="counterThemeColorText">
             Skills
@@ -146,7 +154,11 @@
           color="white"
         >
           <v-list-item-action>
-            <v-icon :class="counterThemeColorText">mdi-trending-up</v-icon>
+            <v-icon
+              color="yellow accent-2"
+              :class="counterThemeColorText + ' mIcon'"
+              >mdi-trending-up</v-icon
+            >
           </v-list-item-action>
           <v-list-item-content :class="counterThemeColorText">
             Experience
@@ -164,7 +176,11 @@
           color="white"
         >
           <v-list-item-action>
-            <v-icon :class="counterThemeColorText">mdi-wrench</v-icon>
+            <v-icon
+              color="pink accent-2"
+              :class="counterThemeColorText + ' mIcon'"
+              >mdi-wrench</v-icon
+            >
           </v-list-item-action>
           <v-list-item-content :class="counterThemeColorText">
             Projects
@@ -235,5 +251,8 @@ export default {
 <style scoped>
 #page-one {
   height: 100%;
+}
+.mIcon:hover {
+  transform: scale(1.15);
 }
 </style>
