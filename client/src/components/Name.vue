@@ -11,32 +11,10 @@
     <v-row align="center" justify="center" no-gutters :style="mainStyle">
       <v-col cols="12" class="text-center">
         <transition
-          name="fade"
-          @after-appear="showIm = true"
-          appear
-          :duration="{ enter: 2000 }"
-        >
-          <span
-            class="text-subtitle-2 text-md-body-1 display-1 font-weight-black"
-            v-if="showHi"
-            >Hi</span
-          >
-        </transition>
-        <transition
-          name="fade"
-          @after-enter="showName = true"
-          :duration="{ enter: 2000 }"
-        >
-          <span
-            class="text-subtitle-2 text-md-body-1 display-1 font-weight-black"
-            v-if="showIm"
-            >, I'm</span
-          >
-        </transition>
-        <transition
           name="typing"
-          @after-enter="afterEnterNameEvent"
-          :duration="{ enter: 3000 }"
+          @after-appear="afterEnterNameEvent"
+          appear
+          :duration="{ enter: 1500 }"
         >
           <h1
             class="text-md-h2 text-h3 font-weight-bold white--text"
@@ -81,8 +59,8 @@ export default {
   data() {
     return {
       showHi: true,
-      showIm: false,
-      showName: false,
+      showIm: true,
+      showName: true,
       showSchool: false,
       mainStyle: { minHeight: '80vh' },
       name: '',
@@ -164,7 +142,7 @@ a:hover {
 /* The typing effect */
 @keyframes typing {
   0% {
-    content: 'TENZIN';
+    content: 'TENZIN THABKHAE';
   }
   90% {
     content: 'TENZIN THABKHAE';

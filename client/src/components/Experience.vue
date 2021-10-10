@@ -1,5 +1,5 @@
 <template>
-  <v-container class="light-green lighten-5 px-4 py-8" fluid>
+  <v-container class="white lighten-5 px-4 py-8" fluid>
     <v-row align="center" justify="center" class="my-8">
       <v-col class="text-center">
         <h1
@@ -29,7 +29,7 @@
         <v-timeline-item large fill-dot :color="themeColorClass">
           <template v-slot:icon>
             <v-avatar>
-              <img src="https://tenzint.github.io/sa-logo.png" />
+              <img src="https://tenzint.github.io/favicon.ico" />
             </v-avatar>
           </template>
           <span

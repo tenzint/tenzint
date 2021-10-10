@@ -14,7 +14,7 @@
           `"
           id="nav-skills"
         >
-          SKILLS AT A GLANCE
+          SKILLS
         </h1>
       </v-col>
     </v-row>
@@ -59,7 +59,9 @@
                     v-bind="attrs"
                     v-on="on"
                     ><v-chip color="green darken-4" outlined class="my-2" dark>
-                      <v-icon class="mr-2"> {{ qualObj.mdi }}</v-icon>
+                      <v-icon v-if="!!qualObj.mdi" class="mr-2">
+                        {{ qualObj.mdi }}</v-icon
+                      >
                       {{ qualObj.name }}
                     </v-chip>
                   </v-col>
@@ -120,7 +122,9 @@
                     v-bind="attrs"
                     v-on="on"
                     ><v-chip color="green darken-4" outlined class="my-2" dark>
-                      <v-icon class="mr-2"> {{ skillObj.mdi }}</v-icon>
+                      <v-icon v-if="!!skillObj.mdi" class="mr-2">
+                        {{ skillObj.mdi }}</v-icon
+                      >
                       {{ skillObj.name }}
                     </v-chip>
                   </v-col>

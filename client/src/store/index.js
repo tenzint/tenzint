@@ -7,10 +7,10 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     themeColor: '#33691E',
-    themeColorText: 'light-green--text text--darken-4',
-    themeColorClass: 'light-green darken-4',
-    counterThemeColorText: 'pink--text text--lighten-5',
-    counterThemeColorClass: 'pink lighten-5',
+    themeColorText: 'green--text text--darken-4',
+    themeColorClass: 'green darken-4',
+    counterThemeColorText: 'amber--text text--lighten-5',
+    counterThemeColorClass: 'amber lighten-5',
     skillsChipTitleColor: 'grey lighten-3',
     skillsChipBodyColor: 'grey lighten-2',
     skillsArray: [],
@@ -96,13 +96,13 @@ export default new Vuex.Store({
         mdi: 'mdi-language-html5',
         name: 'HTML',
         key: 'html',
-        value: 4,
+        value: 4.5,
       });
       commit('appendSkillsArray', {
         mdi: 'mdi-language-css3',
         name: 'CSS',
         key: 'css',
-        value: 4,
+        value: 4.5,
       });
       commit('appendSkillsArray', {
         mdi: 'mdi-vuetify',
@@ -121,7 +121,7 @@ export default new Vuex.Store({
         mdi: 'mdi-nodejs',
         name: 'Express.js',
         key: 'express',
-        value: 4,
+        value: 4.5,
       });
       commit('appendSkillsArray', {
         mdi: 'mdi-git',
@@ -134,14 +134,14 @@ export default new Vuex.Store({
         mdi: 'mdi-database-search',
         name: 'SQL',
         key: 'sql',
-        value: 3.5,
+        value: 4,
         hint: 'MySQL, PostGre, SQLite2, ORM',
       });
       commit('appendSkillsArray', {
         mdi: 'mdi-leaf',
         name: 'MongoDB',
         key: 'mongodb',
-        value: 3.5,
+        value: 4,
         divide: true,
       });
       commit('appendSkillsArray', {
@@ -180,6 +180,27 @@ export default new Vuex.Store({
         name: 'Responsive',
         key: 'responsive',
         value: 4.5,
+      });
+      commit('appendQualArray', {
+        name: 'Collaboration',
+        key: 'collab',
+        value: 5,
+      });
+      commit('appendQualArray', {
+        name: 'Project Management',
+        key: 'pmngmt',
+        value: 5,
+      });
+      commit('appendQualArray', {
+        name: 'Workflow Optimization',
+        key: 'wfOpt',
+        value: 5,
+      });
+      commit('appendQualArray', {
+        mdi: 'mdi-monitor-cellphone',
+        name: 'Photoshop',
+        key: 'ps',
+        value: 4,
       });
     },
   },

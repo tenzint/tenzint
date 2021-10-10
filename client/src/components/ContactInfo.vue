@@ -24,7 +24,10 @@
               >
             </v-btn>
           </template>
-          <span class="font-weight-bold">tenzin.thabkhae@mail.utoronto.ca</span>
+          <span class="font-weight-bold"
+            >tenzin [ DOT ] thabkhae [ AT ] mail [ DOT ] utoronto [ DOT ]
+            ca</span
+          >
         </v-tooltip>
       </v-col>
       <v-col cols="auto" class="text-body-2 text-md-body-1 font-weight-thin">
