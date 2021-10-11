@@ -197,7 +197,7 @@ export default new Vuex.Store({
         value: 5,
       });
       commit('appendQualArray', {
-        mdi: 'mdi-monitor-cellphone',
+        mdi: 'mdi-image-album',
         name: 'Photoshop',
         key: 'ps',
         value: 4,
