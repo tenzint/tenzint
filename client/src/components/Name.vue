@@ -17,7 +17,7 @@
           :duration="{ enter: 1500 }"
         >
           <h1
-            class="text-md-h2 text-h3 font-weight-bold white--text"
+            class="text-md-h2 text-h3 font-weight-medium white--text"
             v-if="showName"
           >
             {{ name }}
@@ -28,7 +28,7 @@
             class="
               text-subtitle-2 text-md-body-1
               display-1
-              font-weight-black
+              font-weight-medium
               mt-4
             "
             v-if="showSchool"

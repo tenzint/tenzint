@@ -1,6 +1,6 @@
 // @/sass/variables.scss
 $body-font-family: 'Rockwell';
-$heading-font-family: 'Franklin Gothic';
+$heading-font-family: 'Cooper Black';
 
 @font-face {
   font-family: 'Rockwell';
@@ -10,4 +10,9 @@ $heading-font-family: 'Franklin Gothic';
 @font-face {
   font-family: 'Franklin Gothic';
   src: local('Franklin Gothic'), url('~@/fonts/Franklin-Gothic-Demi-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cooper Black';
+  src: local('Cooper Black'), url('~@/fonts/Cooper-Black-Regular.ttf') format('truetype');
 }

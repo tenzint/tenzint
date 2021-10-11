@@ -18,6 +18,7 @@
               <v-icon
                 :color="counterThemeColorClass"
                 x-large
+                class="mIcon"
                 v-bind="attrs"
                 v-on="on"
                 >mdi-email</v-icon
@@ -45,12 +46,14 @@
               v-bind="attrs"
               v-on="on"
             >
-              <v-icon :color="counterThemeColorClass" x-large
+              <v-icon :color="counterThemeColorClass" x-large class="mIcon"
                 >mdi-github</v-icon
               >
             </v-btn>
           </template>
-          <span class="font-weight-bold">github.com/tenzint</span>
+          <span class="font-weight-bold"
+            >github [ DOT ] com [ SLASH ] tenzint</span
+          >
         </v-tooltip>
       </v-col>
       <v-col cols="auto" class="text-body-2 text-md-body-1 font-weight-thin">
@@ -69,6 +72,7 @@
               <v-icon
                 :color="counterThemeColorClass"
                 x-large
+                class="mIcon"
                 v-bind="attrs"
                 v-on="on"
                 >mdi-linkedin</v-icon
@@ -76,7 +80,8 @@
             </v-btn>
           </template>
           <span class="font-weight-bold"
-            >linkedin.com/in/tenzin-thabkhae-54a37069</span
+            >linkedin [ DOT ] com [ SLASH ] in [ SLASH ]
+            tenzin-thabkhae-54a37069</span
           >
         </v-tooltip>
       </v-col>
@@ -96,13 +101,16 @@
               <v-icon
                 :color="counterThemeColorClass"
                 x-large
+                class="mIcon"
                 v-bind="attrs"
                 v-on="on"
                 >mdi-fire</v-icon
               >
             </v-btn>
           </template>
-          <span class="font-weight-bold">freecodecamp.org/tenzint</span>
+          <span class="font-weight-bold"
+            >freecodecamp [ DOT ] org [ SLASH ] tenzint</span
+          >
         </v-tooltip>
       </v-col>
       <v-col cols="auto" class="text-body-2 text-md-body-1 font-weight-thin">
@@ -116,12 +124,12 @@
               v-on="on"
               @click.prevent="downloadResumePdf"
             >
-              <v-icon :color="themeColorClass" x-large
+              <v-icon :color="themeColorClass" x-large class="mIcon"
                 >mdi-file-account-outline</v-icon
               >
             </v-btn>
           </template>
-          <span class="font-weight-bold">download resume</span>
+          <span class="font-weight-bold">Download resume</span>
         </v-tooltip>
       </v-col>
     </v-row>

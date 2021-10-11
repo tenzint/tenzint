@@ -71,7 +71,7 @@
                 mb-0
                 text-h4
                 text-center
-                font-weight-bold
+                font-weight-thin
                 ${counterThemeColorText}
               `"
             >
@@ -87,7 +87,7 @@
                 pt-0
                 text-h4
                 text-center
-                font-weight-bold
+                font-weight-thin
                 ${counterThemeColorText}
               `"
             >
@@ -233,7 +233,6 @@ export default {
 </script>
 <style lang="scss">
 @import '@/sass/variables.scss';
-
 #page-one {
   height: 100%;
 }
