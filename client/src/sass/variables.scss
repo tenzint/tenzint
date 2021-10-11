@@ -1,3 +1,13 @@
 // @/sass/variables.scss
-$body-font-family: 'Open Sans', sans-serif;
-$heading-font-family: 'Open Sans', sans-serif;
+$body-font-family: 'Rockwell';
+$heading-font-family: 'Franklin Gothic';
+
+@font-face {
+  font-family: 'Rockwell';
+  src: local('Rockwell'), url('~@/fonts/rock.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  src: local('Franklin Gothic'), url('~@/fonts/Franklin-Gothic-Demi-Regular.ttf') format('truetype');
+}

@@ -110,11 +110,7 @@
           color="white"
         >
           <v-list-item-action>
-            <v-icon
-              color="teal accent-2"
-              :class="counterThemeColorText + ' mIcon'"
-              >mdi-account</v-icon
-            >
+            <v-icon color="teal accent-2" class="mIcon">mdi-account</v-icon>
           </v-list-item-action>
           <v-list-item-content :class="counterThemeColorText">
             Profile
@@ -132,11 +128,7 @@
           color="white"
         >
           <v-list-item-action>
-            <v-icon
-              color="purple accent-2"
-              :class="counterThemeColorText + ' mIcon'"
-              >mdi-equalizer</v-icon
-            >
+            <v-icon color="purple accent-2" class="mIcon">mdi-equalizer</v-icon>
           </v-list-item-action>
           <v-list-item-content :class="counterThemeColorText">
             Skills
@@ -154,9 +146,7 @@
           color="white"
         >
           <v-list-item-action>
-            <v-icon
-              color="yellow accent-2"
-              :class="counterThemeColorText + ' mIcon'"
+            <v-icon color="yellow accent-2" class="mIcon"
               >mdi-trending-up</v-icon
             >
           </v-list-item-action>
@@ -176,11 +166,7 @@
           color="white"
         >
           <v-list-item-action>
-            <v-icon
-              color="pink accent-2"
-              :class="counterThemeColorText + ' mIcon'"
-              >mdi-wrench</v-icon
-            >
+            <v-icon color="pink accent-2" class="mIcon">mdi-wrench</v-icon>
           </v-list-item-action>
           <v-list-item-content :class="counterThemeColorText">
             Projects
@@ -247,8 +233,7 @@ export default {
 </script>
 <style lang="scss">
 @import '@/sass/variables.scss';
-</style>
-<style scoped>
+
 #page-one {
   height: 100%;
 }
