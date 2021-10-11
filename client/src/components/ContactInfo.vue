@@ -25,7 +25,7 @@
               >
             </v-btn>
           </template>
-          <span class="font-weight-bold"
+          <span class="font-weight-light"
             >tenzin [ DOT ] thabkhae [ AT ] mail [ DOT ] utoronto [ DOT ]
             ca</span
           >
@@ -51,7 +51,7 @@
               >
             </v-btn>
           </template>
-          <span class="font-weight-bold"
+          <span class="font-weight-light"
             >github [ DOT ] com [ SLASH ] tenzint</span
           >
         </v-tooltip>
@@ -79,7 +79,7 @@
               >
             </v-btn>
           </template>
-          <span class="font-weight-bold"
+          <span class="font-weight-light"
             >linkedin [ DOT ] com [ SLASH ] in [ SLASH ]
             tenzin-thabkhae-54a37069</span
           >
@@ -108,7 +108,7 @@
               >
             </v-btn>
           </template>
-          <span class="font-weight-bold"
+          <span class="font-weight-light"
             >freecodecamp [ DOT ] org [ SLASH ] tenzint</span
           >
         </v-tooltip>
@@ -129,7 +129,7 @@
               >
             </v-btn>
           </template>
-          <span class="font-weight-bold">Download resume</span>
+          <span class="font-weight-light">Download resume</span>
         </v-tooltip>
       </v-col>
     </v-row>
