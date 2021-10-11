@@ -39,7 +39,6 @@
             ${themeColorText}
             mb-4
             text-center
-            text-decoration-underline
           `"
           >
             QUALITIES
@@ -98,7 +97,6 @@
             ${themeColorText}
             mb-4
             text-center
-            text-decoration-underline
           `"
           >
             SOFTWARE
