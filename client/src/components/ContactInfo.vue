@@ -80,8 +80,8 @@
             </v-btn>
           </template>
           <span class="font-weight-light"
-            >linkedin [ DOT ] com [ SLASH ] in [ SLASH ]
-            tenzin-thabkhae-54a37069</span
+            >linkedin [ DOT ] com [ SLASH ] in [ SLASH ] tenzin [ DASH ]
+            thabkhae [ DASH ] 54a37069</span
           >
         </v-tooltip>
       </v-col>
