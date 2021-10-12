@@ -51,7 +51,6 @@
                       contain
                     >
                     </v-img>
-                    <v-spacer></v-spacer>
                     <v-card-text class="pt-8">
                       <h4
                         :class="`
@@ -113,12 +112,10 @@
                             >
                           </v-col>
                         </v-row>
-                        <v-spacer></v-spacer>
                         <v-divider
                           v-if="!!project.link || !!project.github"
                           class="green darken-4"
                         ></v-divider>
-                        <v-spacer></v-spacer>
                         <v-card-actions>
                           <v-btn
                             v-if="!!project.link"
