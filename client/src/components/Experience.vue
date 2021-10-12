@@ -324,6 +324,6 @@ export default {
 .v-card__text,
 .v-card__title {
   word-break: normal;
-  /* maybe !important  */
+  font-family: 'Franklin Gothic' !important;
 }
 </style>

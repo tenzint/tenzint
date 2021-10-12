@@ -33,11 +33,12 @@
         <v-col cols="12" md="4" class="elevation-16 pa-4">
           <h4
             :class="`
-            text-heading-5
-            text-md-heading-4
-            font-weight-bold
+            text-h6
+            text-md-h5
+            font-weight-black
             ${themeColorText}
             mb-4
+            subTitle
             text-center
           `"
           >
@@ -91,11 +92,12 @@
         <v-col cols="12" md="4" class="elevation-16 pa-4">
           <h4
             :class="`
-            text-heading-5
-            text-md-heading-4
-            font-weight-bold
+            text-h6
+            text-md-h5
+            font-weight-black
             ${themeColorText}
             mb-4
+            subTitle
             text-center
           `"
           >
@@ -185,4 +187,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.subTitle {
+  font-family: 'Franklin Gothic' !important;
+}
+</style>

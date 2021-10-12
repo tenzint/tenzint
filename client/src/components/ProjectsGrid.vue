@@ -46,6 +46,7 @@
                     <v-img
                       width="100vw"
                       height="220px"
+                      class="ma-0 pa-0"
                       :src="project.img"
                       contain
                     >
@@ -54,17 +55,17 @@
                     <v-card-text class="pt-8">
                       <h4
                         :class="`
-                          text-heading-5
-                          text-md-heading-4
+                          text-h6
+                          text-md-h5
                           font-weight-bold
-                          pt-4
+                          pa-0 ma-0 pb-2
                           text-left
                           ${themeColorText}
                         `"
                       >
                         {{ project.title }}
                       </h4>
-                      <p class="text-left">{{ project.desc }}</p>
+                      <p class="text-left mb-0">{{ project.desc }}</p>
                     </v-card-text>
 
                     <v-expand-transition>
@@ -79,7 +80,7 @@
                         style="height: 100%"
                       >
                         <v-card-title
-                          class="green--text text--darken-4 text-h5 pa-4"
+                          class="green--text text--darken-4 text-h5 pb-0"
                         >
                           Accomplishments
                         </v-card-title>
@@ -90,7 +91,7 @@
                           <v-col cols="12" class="ma-0 pa-0 px-4">
                             <ul class="text-left mb-0 pb-0">
                               <span
-                                class="text-body-1 px-4"
+                                class="text-body-1 pt-0 px-4"
                                 v-html="project.points"
                               ></span>
                             </ul>
@@ -112,7 +113,12 @@
                             >
                           </v-col>
                         </v-row>
-                        <v-divider class="green darken-4"></v-divider>
+                        <v-spacer></v-spacer>
+                        <v-divider
+                          v-if="!!project.link || !!project.github"
+                          class="green darken-4"
+                        ></v-divider>
+                        <v-spacer></v-spacer>
                         <v-card-actions>
                           <v-btn
                             v-if="!!project.link"
@@ -236,6 +242,10 @@ a:hover {
   opacity: 1;
   position: absolute;
   width: 100%;
+}
+.v-card__text h4,
+.v-card__title {
+  font-family: 'Franklin Gothic' !important;
 }
 .hoverText {
   min-height: 220px;

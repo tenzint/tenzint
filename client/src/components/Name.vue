@@ -152,4 +152,7 @@ a:hover {
 .typing-leave-to {
   opacity: 0;
 }
+h1 {
+  font-family: 'Franklin Gothic' !important;
+}
 </style>
