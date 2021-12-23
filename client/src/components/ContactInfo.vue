@@ -25,10 +25,7 @@
               >
             </v-btn>
           </template>
-          <span class="font-weight-light"
-            >tenzin [ DOT ] thabkhae [ AT ] mail [ DOT ] utoronto [ DOT ]
-            ca</span
-          >
+          <span class="font-weight-light">Email</span>
         </v-tooltip>
       </v-col>
       <v-col cols="auto" class="text-body-2 text-md-body-1 font-weight-thin">
@@ -51,9 +48,7 @@
               >
             </v-btn>
           </template>
-          <span class="font-weight-light"
-            >github [ DOT ] com [ SLASH ] tenzint</span
-          >
+          <span class="font-weight-light">Github</span>
         </v-tooltip>
       </v-col>
       <v-col cols="auto" class="text-body-2 text-md-body-1 font-weight-thin">
@@ -79,10 +74,7 @@
               >
             </v-btn>
           </template>
-          <span class="font-weight-light"
-            >linkedin [ DOT ] com [ SLASH ] in [ SLASH ] tenzin [ DASH ]
-            thabkhae [ DASH ] 54a37069</span
-          >
+          <span class="font-weight-light">Linkedin</span>
         </v-tooltip>
       </v-col>
       <v-col cols="auto" class="text-body-2 text-md-body-1 font-weight-thin">
@@ -108,9 +100,7 @@
               >
             </v-btn>
           </template>
-          <span class="font-weight-light"
-            >freecodecamp [ DOT ] org [ SLASH ] tenzint</span
-          >
+          <span class="font-weight-light">Freecodecamp - Responsive Cert</span>
         </v-tooltip>
       </v-col>
       <v-col cols="auto" class="text-body-2 text-md-body-1 font-weight-thin">
