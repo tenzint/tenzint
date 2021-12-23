@@ -15,6 +15,15 @@ export default {
 
       // ---- Appending projects ----
       commit('appendProjects', {
+        key: 'tcccscreen',
+        title: 'TCCC self-screen',
+        img: 'https://tenzint.github.io/projects/tenzinhub-ttc.png',
+        desc: 'Web app for self-screening of members and visitors at the Tibetan Canadian Cultural Center',
+        points:
+          '<li><b>Vue.js</b> frontend</li>',
+        link: 'https://tcccscreen.web.app/',
+      });
+      commit('appendProjects', {
         key: 'tenzinhub',
         title: 'Tenzin Hub - Weather and TTC transit',
         img: 'https://tenzint.github.io/projects/tenzinhub-ttc.png',
