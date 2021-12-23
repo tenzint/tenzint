@@ -122,14 +122,19 @@
               ripple
               v-bind="attrs"
               v-on="on"
-              @click.prevent="downloadResumePdf"
             >
-              <v-icon :color="themeColorClass" x-large class="mIcon"
-                >mdi-file-account-outline</v-icon
+              <a
+                href="https://tenzint.github.io/tenzin_resume.pdf"
+                download="tenzin"
+                target="_blank"
+              >
+                <v-icon :color="themeColorClass" x-large class="mIcon"
+                  >mdi-file-account-outline</v-icon
+                ></a
               >
             </v-btn>
           </template>
-          <span class="font-weight-light">Download resume</span>
+          <span class="font-weight-light">Resume</span>
         </v-tooltip>
       </v-col>
     </v-row>
@@ -137,56 +142,11 @@
 </template>
 <script>
 import { mapState } from 'vuex';
-import * as firebase from 'firebase/app';
 import 'firebase/storage';
 
 export default {
   computed: {
     ...mapState(['counterThemeColorClass', 'themeColorClass']),
-  },
-  methods: {
-    downloadResumePdf() {
-      const resumeRef = firebase.storage().ref('tenzin_resume.pdf');
-      resumeRef
-        .getDownloadURL()
-        .then((url) => {
-          // This can be downloaded directly:
-          const xhr = new XMLHttpRequest();
-          xhr.responseType = 'blob';
-          xhr.onload = function () {
-            const blob = xhr.response;
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'tenzin_resume';
-            link.click();
-            URL.revokeObjectURL(link.href);
-          };
-          xhr.open('GET', url);
-          xhr.send();
-        })
-        .catch((error) => {
-          // Handle any errors
-          switch (error.code) {
-            case 'storage/object-not-found':
-              // File doesn't exist
-              break;
-
-            case 'storage/unauthorized':
-              // User doesn't have permission to access the object
-              break;
-
-            case 'storage/canceled':
-              // User canceled the upload
-              break;
-
-            case 'storage/unknown':
-              // Unknown error occurred, inspect the server response
-              break;
-            default:
-              break;
-          }
-        });
-    },
   },
 };
 </script>
