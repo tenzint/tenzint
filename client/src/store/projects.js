@@ -19,7 +19,9 @@ export default {
         title: 'TCCC self-screen',
         img: 'https://tenzint.github.io/projects/tccc-screen.jpg',
         desc: 'Web app for self-screening of members and visitors at the Tibetan Canadian Cultural Center',
-        points: '<li><b>Vue.js</b> frontend</li>',
+        points:
+          '<li><b>Vue.js</b> frontend</li>' +
+          '<li><b>Vuetify.js</b> component framework for responsive and reactive look</li>',
         link: 'https://tcccscreen.web.app/',
       });
       commit('appendProjects', {
